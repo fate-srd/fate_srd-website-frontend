@@ -33,8 +33,6 @@ export async function getStaticProps(
   context
 ) {
   const path = await drupal.translatePathFromContext(context)
-  console.log("path", path)
-  console.log("context", context)
 
   if (!path) {
     return {

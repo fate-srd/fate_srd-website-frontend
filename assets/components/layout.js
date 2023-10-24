@@ -1,9 +1,11 @@
 import Link from "next/link"
+import Header from "./header"
+import Footer from "./footer"
 
 export function Layout({ children, aside }) {
   return (
     <div className="page-wrapper">
-    {/* <Header /> */}
+    <Header />
     <div className="site-main">
       <div
         className={
@@ -15,7 +17,7 @@ export function Layout({ children, aside }) {
         {children}
       </div>
     </div>
-    {/* <Footer /> */}
+    <Footer />
   </div>
   )
 }
