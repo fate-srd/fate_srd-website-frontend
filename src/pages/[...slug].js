@@ -3,8 +3,8 @@ import Head from "next/head"
 import { DrupalNode } from "next-drupal"
 
 import { drupal } from "lib/drupal"
-import { NodeArticle } from "components/node--article"
-import { Layout } from "components/layout"
+import { NodeArticle } from "assets/components/node--article"
+import { Layout } from "assets/components/layout"
 
 const RESOURCE_TYPES = ["node--article"]
 

@@ -3,8 +3,8 @@ import { GetStaticPropsResult } from "next"
 import { DrupalNode } from "next-drupal"
 
 import { drupal } from "lib/drupal"
-import { Layout } from "components/layout"
-import { NodeArticleTeaser } from "components/node--article--teaser"
+import { Layout } from "assets/components/layout"
+import { NodeArticleTeaser } from "assets/components/node--article--teaser"
 
 export default function IndexPage({ nodes }) {
   return (
