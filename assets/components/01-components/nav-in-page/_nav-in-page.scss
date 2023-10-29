@@ -139,6 +139,7 @@
     &__image {
       margin: 0 auto;
       box-shadow: var(--box-shadow);
+      height: auto;
     }
 
     &__header {
@@ -192,6 +193,6 @@
   padding-left: var(--s05);
 }
 
-.nav-in-page__show-menu[aria-expanded='true'] + .nav-in-page__ul--child {
+.nav-in-page__show-menu[aria-expanded='true']+.nav-in-page__ul--child {
   display: block;
 }

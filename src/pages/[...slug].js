@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { drupal } from '../../lib/drupal';
 import { Layout } from '../../assets/components/layout';
 import linkIcon from '../../assets/images/icons/link-solid.svg';
+import Aside from '../../assets/components/aside';
 
 export default function NodePage({ resource, ruleBook }) {
   const [toc, setToc] = useState([{}]);
@@ -59,7 +60,7 @@ export default function NodePage({ resource, ruleBook }) {
   pageContent = pageContent.replace(/<h(\d+)>([^<>]*)<\/h(\d+)>/gi, replacer);
 
   return (
-    <Layout>
+    <Layout aside>
       <Head>
         <title>{resource.title}</title>
         <meta name="description" content="A Next.js site powered by Drupal." />
@@ -82,9 +83,9 @@ export default function NodePage({ resource, ruleBook }) {
 
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </main>
-      {/* <aside className="aside-wrapper">
-        <Aside ruleBook={ruleBook} authorlist={authorlist} />
-      </aside> */}
+      <aside className="aside-wrapper">
+        <Aside ruleBook={book} publicationTagID={resource.field_tags[0].id} />
+      </aside>
     </Layout>
   );
 }
