@@ -1,8 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
-import { DrupalNode } from "next-drupal"
+import Image from 'next/image';
+import Link from 'next/link';
+import { DrupalNode } from 'next-drupal';
 
-import { absoluteUrl, formatDate } from "../../lib/utils"
+import { absoluteUrl, formatDate } from '../../lib/utils';
 
 export function NodeArticleTeaser({ node, ...props }) {
   return (
@@ -13,7 +13,7 @@ export function NodeArticleTeaser({ node, ...props }) {
       <div className="mb-4 text-gray-600">
         {node.uid?.display_name ? (
           <span>
-            Posted by{" "}
+            Posted by{' '}
             <span className="font-semibold">{node.uid?.display_name}</span>
           </span>
         ) : null}
@@ -47,5 +47,5 @@ export function NodeArticleTeaser({ node, ...props }) {
         </svg>
       </Link>
     </article>
-  )
+  );
 }

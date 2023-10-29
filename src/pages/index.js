@@ -1,10 +1,8 @@
-import Head from "next/head"
-import { GetStaticPropsResult } from "next"
-import { DrupalNode } from "next-drupal"
+import Head from 'next/head';
 
-import { drupal } from "lib/drupal"
-import { Layout } from "assets/components/layout"
-import { NodeArticleTeaser } from "assets/components/node--article--teaser"
+import { drupal } from '../../lib/drupal';
+import { Layout } from '../../assets/components/layout';
+import { NodeArticleTeaser } from '../../assets/components/node--article--teaser';
 
 export default function IndexPage({ nodes }) {
   return (
@@ -30,28 +28,26 @@ export default function IndexPage({ nodes }) {
         )}
       </div>
     </Layout>
-  )
+  );
 }
 
-export async function getStaticProps(
-  context
-) {
+export async function getStaticProps(context) {
   const nodes = await drupal.getResourceCollectionFromContext(
-    "node--article",
+    'node--article',
     context,
     {
       params: {
-        "filter[status]": 1,
-        "fields[node--article]": "title,path,field_image,uid,created",
-        include: "field_image,uid",
-        sort: "-created",
+        'filter[status]': 1,
+        'fields[node--article]': 'title,path,field_image,uid,created',
+        include: 'field_image,uid',
+        sort: '-created',
       },
     }
-  )
+  );
 
   return {
     props: {
       nodes,
     },
-  }
+  };
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
-import logo from 'assets/images/logo.svg';
+import logo from '../images/logo.svg';
 
 const fateTranslations = {
   'Fate SRD in Spanish': 'https://fate.1d12monos.com/',
@@ -54,9 +54,9 @@ const Footer = () => (
             </Link>
           </li>
           <li className="site-footer__li">
-            <a className="site-footer__link" href="/contact-us">
+            <Link className="site-footer__link" href="/contact-us">
               Contact Us
-            </a>
+            </Link>
           </li>
           <li className="site-footer__li">
             <Link href="/official-licensing-fate" className="site-footer__link">

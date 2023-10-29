@@ -1,12 +1,12 @@
-import Head from "next/head"
-import { drupal } from "lib/drupal"
-import { Layout } from "assets/components/layout"
-import { useState, useEffect } from "react"
-import linkIcon from '../../assets/images/icons/link-solid.svg'
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import { drupal } from '../../lib/drupal';
+import { Layout } from '../../assets/components/layout';
+import linkIcon from '../../assets/images/icons/link-solid.svg';
 
 export default function NodePage({ resource, ruleBook }) {
   const [toc, setToc] = useState([{}]);
-  
+
   useEffect(() => {
     const headers = document.querySelectorAll(
       '.main-content-wrapper h2, .main-content-wrapper h3, .main-content-wrapper h4'
@@ -38,8 +38,8 @@ export default function NodePage({ resource, ruleBook }) {
     setToc(tocContent());
   }, []);
 
-  if (!resource) return null
-  const book = ruleBook[0].name
+  if (!resource) return null;
+  const book = ruleBook[0].name;
 
   function replacer(match, p1, p2, p3, offset, string) {
     const hash = p2
@@ -52,10 +52,10 @@ export default function NodePage({ resource, ruleBook }) {
   }
 
   let pageContent =
-  resource.body.processed !== ''
-  ? resource.body.processed
-  : resource.body.value;
-  
+    resource.body.processed !== ''
+      ? resource.body.processed
+      : resource.body.value;
+
   pageContent = pageContent.replace(/<h(\d+)>([^<>]*)<\/h(\d+)>/gi, replacer);
 
   return (
@@ -79,60 +79,50 @@ export default function NodePage({ resource, ruleBook }) {
             </ul>
           </div>
         )}
-        
-        <div
-          dangerouslySetInnerHTML={{ __html: pageContent }}
-          
-        />
-      
+
+        <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </main>
       {/* <aside className="aside-wrapper">
         <Aside ruleBook={ruleBook} authorlist={authorlist} />
       </aside> */}
     </Layout>
-  )
+  );
 }
 
 export async function getStaticPaths(context) {
   return {
-    paths: await drupal.getStaticPathsFromContext("node--article", context),
-    fallback: "blocking",
-  }
+    paths: await drupal.getStaticPathsFromContext('node--article', context),
+    fallback: 'blocking',
+  };
 }
 
-export async function getStaticProps(
-  context
-) {
-  const path = await drupal.translatePathFromContext(context)
+export async function getStaticProps(context) {
+  const path = await drupal.translatePathFromContext(context);
   if (!path) {
     return {
       notFound: true,
-    }
+    };
   }
 
-  const type = path.jsonapi.resourceName
+  const type = path.jsonapi.resourceName;
 
-  let params = {}
-  if (type === "node--article") {
+  let params = {};
+  if (type === 'node--article') {
     params = {
-      include: "field_image,uid",
-    }
+      include: 'field_image,uid',
+    };
   }
 
-  const resource = await drupal.getResourceFromContext(
-    path,
-    context,
-    {
-      params,
-    }
-  )
+  const resource = await drupal.getResourceFromContext(path, context, {
+    params,
+  });
 
   // At this point, we know the path exists and it points to a resource.
   // If we receive an error, it means something went wrong on Drupal.
   // We throw an error to tell revalidation to skip this for now.
   // Revalidation can try again on next request.
   if (!resource) {
-    throw new Error(`Failed to fetch resource: ${path.jsonapi.individual}`)
+    throw new Error(`Failed to fetch resource: ${path.jsonapi.individual}`);
   }
 
   // If we're not in preview mode and the resource is not published,
@@ -140,23 +130,23 @@ export async function getStaticProps(
   if (!context.preview && resource?.status === false) {
     return {
       notFound: true,
-    }
+    };
   }
 
   const ruleBook = await drupal.getResourceCollectionFromContext(
-    "taxonomy_term--fate_version",
+    'taxonomy_term--fate_version',
     context,
     {
       params: {
-        "filter[id]": resource.field_tags[0].id,
+        'filter[id]': resource.field_tags[0].id,
       },
     }
-  )
+  );
 
   return {
     props: {
       resource,
-      ruleBook
+      ruleBook,
     },
-  }
+  };
 }

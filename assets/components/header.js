@@ -54,7 +54,11 @@ class Header extends React.Component {
       <header className="site-header">
         <div className="site-header__branding">
           <Link href="/">
-            <Image src={logo} alt="Fate SRD Logo" className="site-header__logo" />
+            <Image
+              src={logo}
+              alt="Fate SRD Logo"
+              className="site-header__logo"
+            />
           </Link>
           <div className="site-header__branding__menu-toggle">
             <FontAwesomeIcon icon={faBars} className="bars" />
@@ -119,7 +123,9 @@ class Header extends React.Component {
                   <dl className="nav-flyout__region">
                     <dt>Toolkits</dt>
                     <dd>
-                      <Link href="/fate-system-toolkit">Fate System Toolkit</Link>
+                      <Link href="/fate-system-toolkit">
+                        Fate System Toolkit
+                      </Link>
                     </dd>
                     <dd>
                       <Link href="/fate-adversary-toolkit">
@@ -153,7 +159,9 @@ class Header extends React.Component {
                       <Link href="/gods-and-monsters">Gods and Monsters</Link>
                     </dd>
                     <dd>
-                      <Link href="/sails-full-of-stars">Sails Full of Stars</Link>
+                      <Link href="/sails-full-of-stars">
+                        Sails Full of Stars
+                      </Link>
                     </dd>
                     <dd>
                       <Link href="/three-rocketeers">Three Rocketeers</Link>
@@ -163,13 +171,19 @@ class Header extends React.Component {
                   <dl className="nav-flyout__region">
                     <dt>Fate Codex</dt>
                     <dd>
-                      <Link href="/fate-codex/fate-codex-volume-1">Volume 1</Link>
+                      <Link href="/fate-codex/fate-codex-volume-1">
+                        Volume 1
+                      </Link>
                     </dd>
                     <dd>
-                      <Link href="/fate-codex/fate-codex-volume-2">Volume 2</Link>
+                      <Link href="/fate-codex/fate-codex-volume-2">
+                        Volume 2
+                      </Link>
                     </dd>
                     <dd>
-                      <Link href="/fate-codex/fate-codex-volume-3">Volume 3</Link>
+                      <Link href="/fate-codex/fate-codex-volume-3">
+                        Volume 3
+                      </Link>
                     </dd>
                   </dl>
 
@@ -257,7 +271,9 @@ class Header extends React.Component {
                   <dl className="nav-flyout__region nav-flyout__region--simple">
                     <dt>Watch, Listen, and Enjoy!</dt>
                     <dd>
-                      <Link href="/learn-to-play">Learn to Play Fate Series</Link>
+                      <Link href="/learn-to-play">
+                        Learn to Play Fate Series
+                      </Link>
                     </dd>
                     <dd>
                       <Link href="/actual-play">Actual Play List</Link>

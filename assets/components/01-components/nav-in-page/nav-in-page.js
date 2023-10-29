@@ -18,7 +18,7 @@ Drupal.behaviors.navInPage = {
      * Large screen functionality
      */
     const sectionToggleButton = context.querySelectorAll(
-      '.nav-in-page__show-menu',
+      '.nav-in-page__show-menu'
     );
     const handleSectionToggleButton = () => {
       this.setAttribute('aria-expanded', 'taco');
