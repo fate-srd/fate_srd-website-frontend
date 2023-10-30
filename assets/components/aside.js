@@ -4,7 +4,7 @@ import { faBars, faTimes } from '@fortawesome/pro-regular-svg-icons';
 // import Menu from './menu';
 import Image from 'next/image';
 import WhereToBuy from './aside/whereToBuy';
-import AuthorList from './aside/authorList';
+import Menu from './menu';
 
 const Aside = ({ ruleBook, publicationTagID }) => (
   <nav className="nav-in-page">
@@ -16,11 +16,7 @@ const Aside = ({ ruleBook, publicationTagID }) => (
       {ruleBook}
     </h1>
     <div className="nav-in-page__content">
-      {/* <Menu
-          menuName={`menu-${menu}`}
-          classBase="nav-in-page"
-          label={ruleBook}
-        /> */}
+      <Menu value={ruleBook} />
       <div className="nav-in-page__about">
         <Image
           className="nav-in-page__about__image"
