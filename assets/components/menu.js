@@ -2,22 +2,27 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/pro-solid-svg-icons';
+import { useRouter } from 'next/router';
 import { drupal } from '../../lib/drupal';
 
 const classBase = 'nav-in-page';
 
-const LinkWithChildren = ({ children, hasChildren, item }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const LinkWithChildren = ({
+  children,
+  hasChildren,
+  item,
+  currentPathname,
+  inActivePath,
+}) => {
+  const [isOpen, setIsOpen] = useState(!!inActivePath);
 
   function buildLink(link) {
-    const href = link.url;
-    const className = classBase ? `${classBase}__link` : '';
-    const props = {
-      activeClassName: 'active',
-      className,
-      href,
-    };
-    return <Link {...props}>{link.title}</Link>;
+    const activeClass = link.url === currentPathname ? 'active' : '';
+    return (
+      <Link href={link.url} className={`${classBase}__link ${activeClass}`}>
+        {link.title}
+      </Link>
+    );
   }
 
   function toggleMenu() {
@@ -47,6 +52,13 @@ const LinkWithChildren = ({ children, hasChildren, item }) => {
 
 const Menu = ({ value }) => {
   const [menuTree, setMenuTree] = useState({});
+  const [currentPathname, setcurrentPathname] = useState('');
+  const router = useRouter();
+  const { query } = router;
+
+  useEffect(() => {
+    setcurrentPathname(window.location.pathname);
+  }, [currentPathname, query]);
 
   useEffect(() => {
     const menuMachineName = () => {
@@ -71,22 +83,36 @@ const Menu = ({ value }) => {
     }
 
     getMenus();
-  }, [value]);
+  }, [value, query]);
 
   function buildMenu(menuArray) {
     if (!menuArray) {
       return;
     }
     return Object.values(menuArray).map((item) => {
-      console.log(item.title, item.items);
       const hasChildren = item?.items !== undefined;
+      const inActivePath = () => {
+        if (typeof item?.items !== 'undefined') {
+          return Object.values(item?.items).some(
+            (v) => v?.url === currentPathname
+          );
+        }
+        return false;
+      };
+      const inActivePathBool = inActivePath();
       const children = hasChildren && (
         <ul className={`${classBase}__ul ${classBase}__ul--child`}>
-          {buildMenu(item.items)}
+          {buildMenu(item.items, currentPathname)}
         </ul>
       );
       return (
-        <LinkWithChildren key={item.id} hasChildren={hasChildren} item={item}>
+        <LinkWithChildren
+          key={item.id}
+          hasChildren={hasChildren}
+          item={item}
+          currentPathname={currentPathname}
+          inActivePath={inActivePathBool}
+        >
           {children}
         </LinkWithChildren>
       );
@@ -94,11 +120,7 @@ const Menu = ({ value }) => {
   }
 
   return (
-    <nav
-      className={`${classBase}__nav`}
-      aria-label="INSERT Menu"
-      role="navigation"
-    >
+    <nav className={`${classBase}__nav`} aria-label="Menu" role="navigation">
       <ul className={`${classBase}__ul`}>{buildMenu(menuTree)}</ul>
     </nav>
   );
