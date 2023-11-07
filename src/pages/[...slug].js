@@ -63,7 +63,6 @@ export default function NodePage({ resource, ruleBook }) {
     <Layout aside>
       <Head>
         <title>{resource.title}</title>
-        <meta name="description" content="A Next.js site powered by Drupal." />
       </Head>
       <main className="main-content-wrapper" role="main">
         <p className="rules-section">{book}</p>

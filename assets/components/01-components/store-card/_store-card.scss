@@ -20,6 +20,10 @@
   transform: scale(1);
   transition: all 0.15s;
 
+  .store-card__image {
+    width: auto;
+  }
+
   &:hover {
     transform: scale(1.025);
     z-index: 100;
