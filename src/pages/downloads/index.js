@@ -9,7 +9,6 @@ const Downloads = () => (
     </Head>
     <main className="main-content-wrapper">
       <h1 className="page-title">Downloads</h1>
-      {console.log(downloadList)}
       <p>
         Want to add your Download or Link to the page? Send us a message and we
         will add it.

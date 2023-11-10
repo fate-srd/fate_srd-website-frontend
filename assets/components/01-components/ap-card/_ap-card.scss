@@ -1,7 +1,7 @@
 .ap-card {
   &__ul {
     @include listResetUl;
-    
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--s2);
@@ -13,6 +13,7 @@
 
   &__img {
     max-width: 50%;
+    height: auto;
   }
 
   &__title {
