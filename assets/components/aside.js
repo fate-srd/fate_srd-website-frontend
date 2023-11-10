@@ -1,12 +1,10 @@
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/pro-regular-svg-icons';
-// import Menu from './menu';
 import Image from 'next/image';
 import WhereToBuy from './aside/whereToBuy';
 import Menu from './menu';
 
-const Aside = ({ ruleBook, publicationTagID }) => (
+const Aside = ({ ruleBook }) => (
   <nav className="nav-in-page">
     <h1 className="nav-in-page__title nav-in-page__mobile-toggle">
       <span>
@@ -18,16 +16,19 @@ const Aside = ({ ruleBook, publicationTagID }) => (
     <div className="nav-in-page__content">
       <Menu value={ruleBook} />
       <div className="nav-in-page__about">
-        <Image
-          className="nav-in-page__about__image"
-          src={`/../images/covers/menu-${ruleBook
-            .toLowerCase()
-            .split(' ')
-            .join('-')}.jpg`}
-          alt={`${ruleBook} Cover`}
-          width="200"
-          height="400"
-        />
+        {ruleBook !== 'Odds and Ends' ||
+          (ruleBook !== 'Fate Codex' && (
+            <Image
+              className="nav-in-page__about__image"
+              src={`/../images/covers/menu-${ruleBook
+                .toLowerCase()
+                .split(' ')
+                .join('-')}.jpg`}
+              alt={`${ruleBook} Cover`}
+              width="200"
+              height="400"
+            />
+          ))}
 
         <WhereToBuy value={ruleBook} />
         {/* 

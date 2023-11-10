@@ -1,10 +1,6 @@
 import Head from 'next/head';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPhoneLaptop,
-  faLongArrowAltRight,
-} from '@fortawesome/pro-solid-svg-icons';
+import { faLongArrowAltRight } from '@fortawesome/pro-solid-svg-icons';
 import Link from 'next/link';
 import Image from 'next/image';
 import heroatomicRobo from '../../assets/images/landing-page-heroes/hero--atomic-robo.jpg';
@@ -13,36 +9,14 @@ import heroFateSystemToolkit from '../../assets/images/landing-page-heroes/hero-
 import heroFrontierSpirit from '../../assets/images/landing-page-heroes/hero--frontier-spirit.jpg';
 import heroGodsAndMonsters from '../../assets/images/landing-page-heroes/hero--gods-and-monsters.jpg';
 import heroIHunt from '../../assets/images/landing-page-heroes/hero--ihunt.jpg';
-import heroOddsEnds from '../../assets/images/landing-page-heroes/hero--odds-ends.jpg';
 import heroSailsFullOfStars from '../../assets/images/landing-page-heroes/hero--sails-full-of-stars.jpg';
 import heroThreeRocketeers from '../../assets/images/landing-page-heroes/hero--three-rocketeers.jpg';
 import heroVentureCity from '../../assets/images/landing-page-heroes/hero--venture-city.jpg';
 import heroWarOfAshes from '../../assets/images/landing-page-heroes/hero--war-of-ashes.jpg';
-import playOnline from '../../assets/images/landing-page-heroes/play-online.jpg';
 import heroFateCondensed from '../../assets/images/landing-page-heroes/hero--fate-condensed.jpg';
 import heroFateAccelerated from '../../assets/images/landing-page-heroes/hero--fate-accelerated.jpg';
 import heroFateCore from '../../assets/images/landing-page-heroes/hero--fate-core.jpg';
 import { Layout } from '../../assets/components/layout';
-
-const ListItem = (props, key) => {
-  const { title, desc, url, images, hasImage = true } = props;
-  return (
-    <li className="core-rules-list__item" key={key}>
-      <Link href={url} aria-label={`Read ${title}`}>
-        <div className="core-rules-list__item__content">
-          {/* <BookImage title={title} hasImage={hasImage} images={images} /> */}
-          <h3>
-            {title} <FontAwesomeIcon icon={faLongArrowAltRight} />
-          </h3>
-          <p
-            className={!desc ? 'hide' : ''}
-            dangerouslySetInnerHTML={{ __html: desc }}
-          />
-        </div>
-      </Link>
-    </li>
-  );
-};
 
 export default function IndexPage() {
   const toolkits = [
@@ -117,7 +91,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <Head>
-        <title>Home • Fate SRD</title>
+        <title>Home • Fate SRD</title>
       </Head>
       <main
         className="main-content-wrapper"
@@ -221,23 +195,6 @@ export default function IndexPage() {
             </ul>
           </section>
 
-          <section className="section__more-fate section__more-fate--playing-online">
-            <div className="content">
-              <h2>
-                <FontAwesomeIcon icon={faPhoneLaptop} /> Playing Fate Online
-              </h2>
-              <p>Get tips and tricks for taking your Fate RPG game online.</p>
-              <Link href="playing-fate-online" className="playing-button">
-                Tips for Playing Fate Online
-              </Link>
-            </div>
-            <Image
-              src={playOnline}
-              alt="Playing Fate Online"
-              className="playing-online"
-            />
-          </section>
-
           <section className="section__more-fate">
             <h2>Toolkit SRDs</h2>
             <ul className="core-rules-list core-rules-list--2up">
@@ -329,11 +286,3 @@ export default function IndexPage() {
     </Layout>
   );
 }
-
-ListItem.propTypes = {
-  title: PropTypes.string,
-  desc: PropTypes.string,
-  url: PropTypes.string,
-  hasImage: PropTypes.bool,
-  images: PropTypes.any,
-};

@@ -40,7 +40,7 @@ export default function NodePage({ resource, ruleBook }) {
   }, []);
 
   if (!resource) return null;
-  const book = ruleBook[0].name;
+  const book = ruleBook[0]?.name;
 
   function replacer(match, p1, p2, p3, offset, string) {
     const hash = p2
@@ -138,7 +138,7 @@ export async function getStaticProps(context) {
     context,
     {
       params: {
-        'filter[id]': resource.field_tags[0].id,
+        'filter[id]': resource?.field_tags ? resource.field_tags[0].id : null,
       },
     }
   );

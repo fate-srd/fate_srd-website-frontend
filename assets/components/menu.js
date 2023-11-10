@@ -62,7 +62,13 @@ const Menu = ({ value }) => {
 
   useEffect(() => {
     const menuMachineName = () => {
-      const tranformedValue = value.toLowerCase().split(' ').join('-');
+      let convertedValue = '';
+      if (value === 'Odds and Ends') {
+        convertedValue = 'Odds Ends';
+      } else {
+        convertedValue = value;
+      }
+      const tranformedValue = convertedValue.toLowerCase().split(' ').join('-');
       let menuName = '';
       if (
         tranformedValue === 'fate-horror-toolkit' ||
