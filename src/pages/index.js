@@ -91,7 +91,7 @@ export default function IndexPage() {
   return (
     <Layout>
       <Head>
-        <title>Home • Fate SRD</title>
+        <title>Fate SRD</title>
       </Head>
       <main
         className="main-content-wrapper"

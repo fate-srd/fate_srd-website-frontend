@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Layout } from '../../../assets/components/layout';
@@ -173,11 +172,8 @@ const StoreCard = ({ card }) => {
 const Store = () => (
   <Layout>
     <Head>
-      <title>Store</title>
+      <title>Fate SRD Store</title>
     </Head>
-    {/* <Helmet>
-      <script src="https://gumroad.com/js/gumroad.js" defer />
-    </Helmet> */}
     <main className="main-content-wrapper main-content-wrapper--store">
       <div className="store-list">
         {products.map((x) => (

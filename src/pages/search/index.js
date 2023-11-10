@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Head from 'next/head';
 import { Layout } from '../../../assets/components/layout';
 
 const Search = () => {
@@ -19,6 +20,9 @@ const Search = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Search the Fate SRD</title>
+      </Head>
       <main className="main-content-wrapper" ref={insertScript}>
         <h1 className="page-title">Search</h1>
         <div className="gcse-search">

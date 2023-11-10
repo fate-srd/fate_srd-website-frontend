@@ -4,6 +4,9 @@ import { Layout } from '../../../assets/components/layout';
 export default function ContactUs() {
   return (
     <Layout>
+      <Head>
+        <title>Contact the Fate SRD</title>
+      </Head>
       <main className="main-content-wrapper">
         <h1 className="page-title">Contact Us</h1>
         <iframe

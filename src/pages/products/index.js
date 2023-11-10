@@ -6,7 +6,7 @@ import { Layout } from '../../../assets/components/layout';
 const Products = ({ bookData, publisherData }) => (
   <Layout>
     <Head>
-      <title>Games &amp; Products</title>
+      <title>Fate Games &amp; Products</title>
     </Head>
     <main className="main-content-wrapper">
       <h1 className="page-title">Games &amp; Products</h1>
