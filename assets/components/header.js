@@ -128,9 +128,22 @@ class Header extends React.Component {
                       </Link>
                     </dd>
                     <dd>
+                      <Link href="/fate-accessibility-toolkit">
+                        Fate Accessibility Toolkit
+                      </Link>
+                    </dd>
+                    <dd>
                       <Link href="/fate-adversary-toolkit">
                         Fate Adversary Toolkit
                       </Link>
+                    </dd>
+                    <dd>
+                      <Link href="/fate-horror-toolkit">
+                        Fate Horror Toolkit
+                      </Link>
+                    </dd>
+                    <dd>
+                      <Link href="/fate-space-toolkit">Fate Space Toolkit</Link>
                     </dd>
                   </dl>
 
