@@ -5,7 +5,8 @@ import PublicationPage from '../../../assets/components/publicationPage';
 
 const Page = () => {
   const title = 'Fate Accessibility Toolkit';
-  const description = '<p>TKTK</p>';
+  const description =
+    '<p>There’s room for everybody at the game table. The Fate Accessibility Toolkit offers a wealth of advice and guidance for Fate Core that brings disabled characters into your game and supports disabled players at your table. We’ve assembled a team from disabled communities to ensure that this book speaks to you from their real, lived experiences.</p>';
 
   return (
     <Layout aside>

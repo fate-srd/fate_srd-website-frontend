@@ -62,7 +62,9 @@ export default function NodePage({ resource, ruleBook }) {
   return (
     <Layout aside>
       <Head>
-        <title>{resource.title}</title>
+        <title>
+          {resource.title} {book && `• ${book}`}
+        </title>
       </Head>
       <main className="main-content-wrapper" role="main">
         <p className="rules-section">{book}</p>

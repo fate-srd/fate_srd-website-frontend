@@ -95,34 +95,42 @@ const Menu = ({ value }) => {
     if (!menuArray) {
       return;
     }
-    return Object.values(menuArray).map((item) => {
-      const hasChildren = item?.items !== undefined;
-      const inActivePath = () => {
-        if (typeof item?.items !== 'undefined') {
-          return Object.values(item?.items).some(
-            (v) => v?.url === currentPathname
-          );
-        }
-        return false;
-      };
-      const inActivePathBool = inActivePath();
-      const children = hasChildren && (
-        <ul className={`${classBase}__ul ${classBase}__ul--child`}>
-          {buildMenu(item.items, currentPathname)}
-        </ul>
-      );
-      return (
-        <LinkWithChildren
-          key={item.id}
-          hasChildren={hasChildren}
-          item={item}
-          currentPathname={currentPathname}
-          inActivePath={inActivePathBool}
-        >
-          {children}
-        </LinkWithChildren>
-      );
-    });
+
+    if (Object.keys(menuArray).length > 0) {
+      return Object.values(menuArray).map((item) => {
+        const hasChildren = item?.items !== undefined;
+        const inActivePath = () => {
+          if (typeof item?.items !== 'undefined') {
+            return Object.values(item?.items).some(
+              (v) => v?.url === currentPathname
+            );
+          }
+          return false;
+        };
+        const inActivePathBool = inActivePath();
+        const children = hasChildren && (
+          <ul className={`${classBase}__ul ${classBase}__ul--child`}>
+            {buildMenu(item.items, currentPathname)}
+          </ul>
+        );
+        return (
+          <LinkWithChildren
+            key={item.id}
+            hasChildren={hasChildren}
+            item={item}
+            currentPathname={currentPathname}
+            inActivePath={inActivePathBool}
+          >
+            {children}
+          </LinkWithChildren>
+        );
+      });
+    }
+    return [1, 1, 1, 1, 1, 1].map((_value, key) => (
+      <li className="nav-in-page__li" key={key}>
+        <span className="nav-in-page__skeleton" />
+      </li>
+    ));
   }
 
   return (

@@ -182,7 +182,7 @@
 
     @include large {
       color: var(--color-yellow-light);
-      font-family: sketchnote-text, sans-serif;
+      font-family: var(--font-sketch);
       font-size: 1.125rem;
       position: absolute;
       top: -100px;
