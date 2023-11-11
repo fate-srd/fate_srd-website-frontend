@@ -27,9 +27,27 @@ export default function IndexPage() {
       image: heroFateSystemToolkit,
     },
     {
+      title: 'Fate Accessibility Toolkit',
+      desc: 'TKTK.',
+      url: '/fate-accessibility-toolkit',
+      image: heroFateAdversaryToolkit,
+    },
+    {
       title: 'Fate Adversary Toolkit',
       desc: 'A great campaign needs opposition to create stirring conflict. <strong>Learn how to use high quality adversaries</strong> to drive your stories to completion.',
       url: '/fate-adversary-toolkit',
+      image: heroFateAdversaryToolkit,
+    },
+    {
+      title: 'Fate Horror Toolkit',
+      desc: 'TKTK',
+      url: '/fate-horror-toolkit',
+      image: heroFateAdversaryToolkit,
+    },
+    {
+      title: 'Fate Space Toolkit',
+      desc: 'TKTK',
+      url: '/fate-space-toolkit',
       image: heroFateAdversaryToolkit,
     },
   ];
@@ -197,7 +215,7 @@ export default function IndexPage() {
 
           <section className="section__more-fate">
             <h2>Toolkit SRDs</h2>
-            <ul className="core-rules-list core-rules-list--2up">
+            <ul className="core-rules-list core-rules-list--3up">
               {toolkits.map((v) => (
                 <li className="core-rules-list__item" key={v.key}>
                   <Link href={v.url} aria-label={`Read ${v.title}`}>
