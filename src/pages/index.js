@@ -28,7 +28,7 @@ export default function IndexPage() {
     },
     {
       title: 'Fate Accessibility Toolkit',
-      desc: 'TKTK.',
+      desc: '<strong>Provides guidance for incorporating disabled characters and supporting disabled players</strong>, developed with input from members of disabled communities to reflect real experiences.',
       url: '/fate-accessibility-toolkit',
       image: heroFateAdversaryToolkit,
     },
@@ -40,13 +40,13 @@ export default function IndexPage() {
     },
     {
       title: 'Fate Horror Toolkit',
-      desc: 'TKTK',
+      desc: "<strong>Tools, mechanics, and hacks for creating thematic horror</strong>, even with Fate's typically competent and proactive characters, and offers various mechanics for designing games centered around classic horror tropes.",
       url: '/fate-horror-toolkit',
       image: heroFateAdversaryToolkit,
     },
     {
       title: 'Fate Space Toolkit',
-      desc: 'TKTK',
+      desc: '<strong>A comprehensive guide for Fate Core games set in outer space</strong>, offering advice and tools for various space-themed settings, from hard science fiction to space opera.',
       url: '/fate-space-toolkit',
       image: heroFateAdversaryToolkit,
     },

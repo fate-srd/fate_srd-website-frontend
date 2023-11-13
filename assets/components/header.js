@@ -95,6 +95,7 @@ class Header extends React.Component {
                     className="nav-primary__link-icon"
                   />
                   <span className="nav-primary__rules-wrapper">
+                    <span className="nav-primary__new-label">NEW!</span>
                     Rules
                     <FontAwesomeIcon
                       icon={faPlus}
@@ -128,7 +129,11 @@ class Header extends React.Component {
                       </Link>
                     </dd>
                     <dd>
-                      <Link href="/fate-accessibility-toolkit">
+                      <Link
+                        href="/fate-accessibility-toolkit"
+                        style={{ whiteSpace: 'wrap' }}
+                      >
+                        <span className="new-label">NEW!</span>
                         Fate Accessibility Toolkit
                       </Link>
                     </dd>
@@ -139,11 +144,15 @@ class Header extends React.Component {
                     </dd>
                     <dd>
                       <Link href="/fate-horror-toolkit">
+                        <span className="new-label">NEW!</span>
                         Fate Horror Toolkit
                       </Link>
                     </dd>
                     <dd>
-                      <Link href="/fate-space-toolkit">Fate Space Toolkit</Link>
+                      <Link href="/fate-space-toolkit">
+                        <span className="new-label">NEW!</span>
+                        Fate Space Toolkit{' '}
+                      </Link>
                     </dd>
                   </dl>
 
