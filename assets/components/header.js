@@ -20,6 +20,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import logo from '../images/logo.svg';
+import PatreonBar from './patreonBar';
 
 class Header extends React.Component {
   componentDidMount() {
@@ -384,6 +385,7 @@ class Header extends React.Component {
             </ul>
           </nav>
         </div>
+        <PatreonBar />
       </header>
     );
   }

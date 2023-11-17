@@ -1,5 +1,5 @@
 .patreon-bar {
-  display: none;
+  // display: none;
   background: var(--color-patreon-orange);
   color: var(--color-white);
   font-weight: bold;
@@ -10,12 +10,14 @@
 
     display: flex;
     flex-flow: column wrap;
-    padding: var(--s05) var(--s);
+    padding: 0 var(--s) var(--s05);
     position: relative;
 
     @include large {
       flex-flow: row nowrap;
       align-items: center;
+      padding-inline: 0;
+      padding-block-end: 0;
     }
   }
 
@@ -26,8 +28,8 @@
 
 .patreon-bar__logo {
   display: block;
-  margin: 0 var(--s) var(--s05) 0;
-  max-width: 116px;
+  max-width: 150px;
+  height: auto;
 
   @include large {
     margin-bottom: 0;
@@ -70,6 +72,7 @@
   @include large {
     margin-left: auto;
     position: static;
+    margin-inline-end: var(--s05);
   }
 
   &:hover {
