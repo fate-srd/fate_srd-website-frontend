@@ -73,7 +73,7 @@ const LearnToPlay = ({ data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const YOUTUBE_HOST = 'https://youtube.googleapis.com';
   const channelId = 'UCQSvVIzeYCcGIbyD4pTsAEQ';
 
