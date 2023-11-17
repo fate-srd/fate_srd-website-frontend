@@ -22,7 +22,7 @@ const LearnToPlay = ({ channelInfos }) => {
       <main className="main-content-wrapper">
         <h1 className="page-title">Learn to Play Fate</h1>
         <p>
-          Thanks to the support of the Fate SRD Patreon, we've been putting
+          Thanks to the support of the Fate SRD Patreon, we have been putting
           together a lot of actual play videos you can learn from. Enjoy!
         </p>
         <br />

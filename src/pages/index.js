@@ -177,8 +177,8 @@ export default function IndexPage() {
                           grab-n-go version of Fate
                         </strong>
                         , written for <strong>easy prep and easy play</strong>.
-                        Don't let that simplicity fool you, use these rules to
-                        run any style and any length campaign.
+                        Don&rsquo;t let that simplicity fool you, use these
+                        rules to run any style and any length campaign.
                       </p>
                     </div>
                   </div>
