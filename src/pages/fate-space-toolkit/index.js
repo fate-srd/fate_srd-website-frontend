@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Layout } from '../../../assets/components/layout';
-import heroImage from '../../../assets/images/landing-page-heroes/hero--fate-accelerated.jpg';
+import heroImage from '../../../assets/images/landing-page-heroes/hero--fate-space-toolkit.jpg';
 import PublicationPage from '../../../assets/components/publicationPage';
 
 const Page = () => {

@@ -155,6 +155,10 @@
   &__item-content-wrapper {
     padding: 0 var(--s2) var(--s2);
 
+    &.pt {
+      padding-top: var(--s2);
+    }
+
     @include medium {
       padding-top: var(--s2);
     }

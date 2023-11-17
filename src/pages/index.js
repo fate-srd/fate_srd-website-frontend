@@ -6,6 +6,9 @@ import Image from 'next/image';
 import heroatomicRobo from '../../assets/images/landing-page-heroes/hero--atomic-robo.jpg';
 import heroFateAdversaryToolkit from '../../assets/images/landing-page-heroes/hero--fate-adversary-toolkit.jpg';
 import heroFateSystemToolkit from '../../assets/images/landing-page-heroes/hero--fate-system-toolkit.jpg';
+import heroFateAccessibilityToolkit from '../../assets/images/landing-page-heroes/hero--fate-accessibility-toolkit.jpg';
+import heroFateHorrorToolkit from '../../assets/images/landing-page-heroes/hero--fate-horror-toolkit.jpg';
+import heroFateSpaceToolkit from '../../assets/images/landing-page-heroes/hero--fate-space-toolkit.jpg';
 import heroFrontierSpirit from '../../assets/images/landing-page-heroes/hero--frontier-spirit.jpg';
 import heroGodsAndMonsters from '../../assets/images/landing-page-heroes/hero--gods-and-monsters.jpg';
 import heroIHunt from '../../assets/images/landing-page-heroes/hero--ihunt.jpg';
@@ -30,7 +33,7 @@ export default function IndexPage() {
       title: 'Fate Accessibility Toolkit',
       desc: '<strong>Provides guidance for incorporating disabled characters and supporting disabled players</strong>, developed with input from members of disabled communities to reflect real experiences.',
       url: '/fate-accessibility-toolkit',
-      image: heroFateAdversaryToolkit,
+      image: heroFateAccessibilityToolkit,
     },
     {
       title: 'Fate Adversary Toolkit',
@@ -42,13 +45,13 @@ export default function IndexPage() {
       title: 'Fate Horror Toolkit',
       desc: "<strong>Tools, mechanics, and hacks for creating thematic horror</strong>, even with Fate's typically competent and proactive characters, and offers various mechanics for designing games centered around classic horror tropes.",
       url: '/fate-horror-toolkit',
-      image: heroFateAdversaryToolkit,
+      image: heroFateHorrorToolkit,
     },
     {
       title: 'Fate Space Toolkit',
       desc: '<strong>A comprehensive guide for Fate Core games set in outer space</strong>, offering advice and tools for various space-themed settings, from hard science fiction to space opera.',
       url: '/fate-space-toolkit',
-      image: heroFateAdversaryToolkit,
+      image: heroFateSpaceToolkit,
     },
   ];
 
@@ -225,7 +228,7 @@ export default function IndexPage() {
                         alt={v.title}
                         style={{ height: 'auto' }}
                       />
-                      <div className="core-rules-list__item-content-wrapper">
+                      <div className="core-rules-list__item-content-wrapper pt">
                         <h3>
                           {v.title}{' '}
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
@@ -254,7 +257,7 @@ export default function IndexPage() {
                         alt={v.title}
                         style={{ height: 'auto' }}
                       />
-                      <div className="core-rules-list__item-content-wrapper">
+                      <div className="core-rules-list__item-content-wrapper pt">
                         <h3>
                           {v.title}{' '}
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
@@ -283,7 +286,7 @@ export default function IndexPage() {
                         alt={v.title}
                         style={{ height: 'auto' }}
                       />
-                      <div className="core-rules-list__item-content-wrapper">
+                      <div className="core-rules-list__item-content-wrapper pt">
                         <h3>
                           {v.title}{' '}
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
