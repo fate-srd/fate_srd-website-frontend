@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Layout } from '../../../assets/components/layout';
-import { getChannelInfo } from '../../../lib/youtube';
 import movieBreakdown from '../../../assets/images/actualPlay/how-to-run-a-contest.jpg';
 
-const LearnToPlay = ({ channelInfos }) => {
+const LearnToPlay = ({ data }) => {
   const formatDate = (value) => {
     const date = new Date(value);
     const formattedDate = date.toLocaleDateString('en-US', {
@@ -14,6 +13,7 @@ const LearnToPlay = ({ channelInfos }) => {
     });
     return formattedDate;
   };
+
   return (
     <Layout>
       <Head>
@@ -44,7 +44,7 @@ const LearnToPlay = ({ channelInfos }) => {
             </h3>
             <p className="small">September 07, 2022</p>
           </li>
-          {channelInfos[0].items
+          {data.items
             .filter((item) => item.id.kind === 'youtube#video')
             .map((item) => (
               <li key={item.id.videoId} className="ap-card__card">
@@ -74,15 +74,16 @@ const LearnToPlay = ({ channelInfos }) => {
 };
 
 export async function getServerSideProps() {
-  const channels = ['UCQSvVIzeYCcGIbyD4pTsAEQ'];
+  const YOUTUBE_HOST = 'https://youtube.googleapis.com';
+  const channelId = 'UCQSvVIzeYCcGIbyD4pTsAEQ';
 
-  const channelInfos = await Promise.all(
-    channels.map((channelId) => getChannelInfo(channelId))
+  const res = await fetch(
+    `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`
   );
-
+  const data = await res.json();
   return {
     props: {
-      channelInfos,
+      data,
     },
   };
 }
