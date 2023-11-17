@@ -52,15 +52,21 @@ export default function NodePage({ resource, ruleBook }) {
     return `<h${p1} id="${hash}">${p2}</h${p1}>`;
   }
 
-  let pageContent =
-    resource.body.processed !== ''
-      ? resource.body.processed
-      : resource.body.value;
+  let pageContent = '';
+
+  if (resource.type === 'pages') {
+    pageContent = resource.body;
+  } else {
+    pageContent =
+      resource.body.processed !== ''
+        ? resource.body.processed
+        : resource.body.value;
+  }
 
   pageContent = pageContent.replace(/<h(\d+)>([^<>]*)<\/h(\d+)>/gi, replacer);
 
   return (
-    <Layout aside>
+    <Layout aside={resource.type !== 'pages'}>
       <Head>
         <title>
           {resource.title} {book && `• ${book}`}
@@ -84,16 +90,19 @@ export default function NodePage({ resource, ruleBook }) {
 
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </main>
-      <aside className="aside-wrapper">
-        <Aside ruleBook={book} publicationTagID={resource.field_tags[0].id} />
-      </aside>
+      {/* <aside className="aside-wrapper">
+        <Aside ruleBook={book} publicationTagID={resource.field_tags[0]?.id} />
+      </aside> */}
     </Layout>
   );
 }
 
 export async function getStaticPaths(context) {
   return {
-    paths: await drupal.getStaticPathsFromContext('node--article', context),
+    paths: await drupal.getStaticPathsFromContext(
+      ['node--article', 'pages'],
+      context
+    ),
     fallback: 'blocking',
   };
 }
