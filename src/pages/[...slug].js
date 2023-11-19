@@ -68,9 +68,7 @@ export default function NodePage({ resource, ruleBook }) {
   return (
     <Layout aside={resource.type !== 'pages'}>
       <Head>
-        <title>
-          {resource.title} {book && `• ${book}`}
-        </title>
+        <title>{`${resource.title} ${book && `• ${book}`}`}</title>
       </Head>
       <main className="main-content-wrapper" role="main">
         <p className="rules-section">{book}</p>
@@ -90,9 +88,14 @@ export default function NodePage({ resource, ruleBook }) {
 
         <div dangerouslySetInnerHTML={{ __html: pageContent }} />
       </main>
-      {/* <aside className="aside-wrapper">
-        <Aside ruleBook={book} publicationTagID={resource.field_tags[0]?.id} />
-      </aside> */}
+      {resource.type !== 'pages' && (
+        <aside className="aside-wrapper">
+          <Aside
+            ruleBook={book}
+            publicationTagID={resource?.field_tags[0]?.id}
+          />
+        </aside>
+      )}
     </Layout>
   );
 }
