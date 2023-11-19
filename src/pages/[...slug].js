@@ -53,14 +53,17 @@ export default function NodePage({ resource, ruleBook }) {
   }
 
   let pageContent = '';
+  let pageTitle = '';
 
   if (resource.type === 'pages') {
     pageContent = resource.body;
+    pageTitle = resource.title;
   } else {
     pageContent =
       resource.body.processed !== ''
         ? resource.body.processed
         : resource.body.value;
+    pageTitle = `${resource.title} • ${book}`;
   }
 
   pageContent = pageContent.replace(/<h(\d+)>([^<>]*)<\/h(\d+)>/gi, replacer);
@@ -68,11 +71,12 @@ export default function NodePage({ resource, ruleBook }) {
   return (
     <Layout aside={resource.type !== 'pages'}>
       <Head>
-        <title>{`${resource.title} ${book && `• ${book}`}`}</title>
+        <title>{pageTitle}</title>
       </Head>
       <main className="main-content-wrapper" role="main">
         <p className="rules-section">{book}</p>
         <h1 className="page-title">{resource.title}</h1>
+        {console.log('resource.type', resource.type)}
         {toc.length > 1 && (
           <div className="toc">
             <h5 className="toc__header">Table of Contents</h5>
