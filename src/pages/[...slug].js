@@ -68,39 +68,7 @@ export default function NodePage({ resource, ruleBook }) {
 
   pageContent = pageContent.replace(/<h(\d+)>([^<>]*)<\/h(\d+)>/gi, replacer);
 
-  return (
-    <Layout aside={resource.type !== 'pages'}>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
-      <main className="main-content-wrapper" role="main">
-        <p className="rules-section">{book}</p>
-        <h1 className="page-title">{resource.title}</h1>
-        {toc.length > 1 && (
-          <div className="toc">
-            <h5 className="toc__header">Table of Contents</h5>
-            <ul className="toc__ul">
-              {toc.map((item) => (
-                <li key={item.id + item.text}>
-                  <a href={`#${item.id}`}>{item.text}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <div dangerouslySetInnerHTML={{ __html: pageContent }} />
-      </main>
-      {resource.type !== 'pages' && (
-        <aside className="aside-wrapper">
-          <Aside
-            ruleBook={book}
-            publicationTagID={resource?.field_tags[0]?.id}
-          />
-        </aside>
-      )}
-    </Layout>
-  );
+  return <Layout>foo</Layout>;
 }
 
 export async function getStaticPaths(context) {
