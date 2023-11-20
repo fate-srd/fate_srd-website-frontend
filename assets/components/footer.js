@@ -97,13 +97,11 @@ const Footer = () => (
           </p>
           <p>This site is not affiliated with Evil Hat Productions, LLC.</p>
           <p>
-            This work is based on{' '}
-            <a href="http://www.faterpg.com/">Fate Core System</a> and Fate
-            Accelerated Edition, products of Evil Hat Productions, LLC,
-            developed, authored, and edited by Leonard Balsera, Brian Engard,
-            Jeremy Keller, Ryan Macklin, Mike Olson, Clark Valentine, Amanda
-            Valentine, Fred Hicks, and Rob Donoghue, and licensed for our use
-            under the{' '}
+            This work is based on Fate Core System and Fate Accelerated Edition,
+            products of Evil Hat Productions, LLC, developed, authored, and
+            edited by Leonard Balsera, Brian Engard, Jeremy Keller, Ryan
+            Macklin, Mike Olson, Clark Valentine, Amanda Valentine, Fred Hicks,
+            and Rob Donoghue, and licensed for our use under the{' '}
             <a href="https://creativecommons.org/licenses/by/3.0/">
               Creative Commons Attribution 3.0 Unported license
             </a>
@@ -119,12 +117,11 @@ const Footer = () => (
             permission. The Four Actions icons were designed by Jeremy Keller.
           </p>
           <p>
-            This work is based on Fate Condensed (found at{' '}
-            <a href="http://www.faterpg.com/">http://www.faterpg.com/</a>), a
-            product of Evil Hat Productions, LLC, developed, authored, and
-            edited by PK Sullivan, Ed Turner, Leonard Balsera, Fred Hicks,
-            Richard Bellingham, Robert Hanz, Ryan Macklin, and Sophie Lagacé,
-            and licensed for our use under the{' '}
+            This work is based on Fate Condensed (found at
+            http://www.faterpg.com/), a product of Evil Hat Productions, LLC,
+            developed, authored, and edited by PK Sullivan, Ed Turner, Leonard
+            Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin,
+            and Sophie Lagacé, and licensed for our use under the{' '}
             <a href="https://creativecommons.org/licenses/by/3.0/">
               Creative Commons Attribution 3.0 Unported license
             </a>
@@ -135,7 +132,7 @@ const Footer = () => (
             under a{' '}
             <a
               rel="license"
-              href="http://creativecommons.org/licenses/by-sa/3.0/us/"
+              href="https://creativecommons.org/licenses/by-sa/3.0/us/"
             >
               Creative Commons Attribution-ShareAlike 3.0 United States License
             </a>
