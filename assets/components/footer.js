@@ -64,7 +64,7 @@ const Footer = () => (
             </Link>
           </li>
           <li className="site-footer__li">
-            <Link href="/privacy-policy" className="site-footer__link">
+            <Link href="/privacy" className="site-footer__link">
               Privacy Policy
             </Link>
           </li>
