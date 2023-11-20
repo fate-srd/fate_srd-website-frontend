@@ -76,13 +76,12 @@ export default function NodePage({ resource, ruleBook }) {
       <main className="main-content-wrapper" role="main">
         <p className="rules-section">{book}</p>
         <h1 className="page-title">{resource.title}</h1>
-        {console.log('resource.type', resource.type)}
         {toc.length > 1 && (
           <div className="toc">
             <h5 className="toc__header">Table of Contents</h5>
             <ul className="toc__ul">
               {toc.map((item) => (
-                <li key={item.id}>
+                <li key={item.id + item.text}>
                   <a href={`#${item.id}`}>{item.text}</a>
                 </li>
               ))}
