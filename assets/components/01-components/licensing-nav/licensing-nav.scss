@@ -1,0 +1,23 @@
+.licensing-nav {
+  background-color: var(--color-gray-medium);
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include medium {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}

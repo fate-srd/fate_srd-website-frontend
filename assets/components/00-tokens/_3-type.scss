@@ -96,4 +96,9 @@ blockquote {
   >*:last-child {
     margin-bottom: 0;
   }
+
+  &.formal {
+    font-family: var(--font-base);
+    letter-spacing: initial;
+  }
 }

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Layout } from '../../../assets/components/layout';
-import bohCover from '../../../assets/images/store/Book of Hanz Cover.png';
+import bohCover from '../../../assets/images/store/Book-of-Hanz-Cover.png';
 import tableBkg from '../../../assets/images/store/tim-mossholder-ysDq0fY-bzo-unsplash.jpg';
 import tt from '../../../assets/images/store/turn-tracker.jpg';
 import ttBkg from '../../../assets/images/store/TurnTracker_BadGreen.jpg';
