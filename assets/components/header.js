@@ -225,6 +225,21 @@ class Header extends React.Component {
                       <Link href="/odds-and-ends">Odds &amp; Ends</Link>
                     </dd>
                   </dl>
+
+                  <dl className="nav-flyout__region">
+                    <dt>Previous versions of Fate</dt>
+                    <dd>
+                      <Link href="/fate-3-era">
+                        Fate 3.0 Era <small>(SOTC, DFRPG)</small>
+                      </Link>
+                    </dd>
+                    <dd>
+                      <Link href="/fate-2-era">Fate 2.0 Era</Link>
+                    </dd>
+                    <dd>
+                      <Link href="/fate-1-era">Fate 1.0 Era</Link>
+                    </dd>
+                  </dl>
                 </div>
               </li>
               <li

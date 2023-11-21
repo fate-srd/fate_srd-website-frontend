@@ -1,0 +1,323 @@
+Fudge on the Fly 
+by Rob Donoghue
+
+I. Introduction
+Fudge on the Fly is a method of character generation that allows games to begin immediately, with only a few moments required for character generation. It does this by allowing players to select their character's skills during play, when the situation arises which calls for them. This has a number of benefits in addition to its speed - most notably it spares players the annoyance of failing to purchase the "right" skills. Every skill purchased will be one that proves itself useful during play. The revelation of character skills over the course of play also allows for the same sort of character discovery that is common in books and film. 
+
+II. The Basics 
+The core of this model is expressed with the character sheet, which includes the adjective ladder from Poor to Superb, and has slots next to each step. By default, there is one step next to Superb, two next to Great, three next to Good, four next to Fair, five next to Mediocre and any number of slots next to poor. Laid out on the page, it will look a lot like this: 
+
+Superb   [       ]
+Great    [       ] [       ]
+Good     [       ] [       ] [       ]
+Fair     [       ] [       ] [       ] [       ]
+Mediocre [       ] [       ] [       ] [       ] [       ]
+
+Poor     [       ] [       ] [       ] [       ] [       ]
+         [       ] [       ] [       ] [       ] [       ]
+         [       ] [       ] [       ] [       ] [       ]
+
+                   
+III. Character Generation 
+Character Generation is composed of four steps: 
+ * Name the Character 
+ * Write a Blurb 
+ * Describe a Flaw 
+ * Choose a Talent 
+
+A. Name the Character 
+Hopefully, this step is self explanatory. Come up with a name that you think sounds neat, and which is not too hard for everyone else to remember, or else you run the risk of acquiring a nickname. 
+
+B. Write a Blurb 
+The character blurb is the one or two sentence summary of the character. It should not be longer than one or two sentences, perhaps twenty words. The goal of the blurb is to express the nature of the character, not their history or personality. This is an example of an awful blurb: 
+
+ Third daughter of the Duke of Glockenberry, her father held her mother’s 
+ death in childbirth against her, remaining cold and distant as she grew 
+ up. Alienated, she sought friends among the castle’s staff, finding 
+ surreptitious comfort in their company, and retreated into books. As she 
+ grew older, she matured into a beauty, and her father turned his eye 
+ towards arranging a politically beneficial marriage for her. Left with 
+ no other option, she fled the castle in the night with nothing but a 
+ horse, a stolen sword, and the coins that were to have been her dowry. 
+
+If this is the story, that’s great, but that’s something to share with the GM, not to worry about in character generation. The blurb version of the above might read: 
+
+ Shut-in daughter of aristocracy fleeing an arranged marriage. 
+
+When in doubt, err on the side of simplicity. 
+
+C. Describe a Flaw 
+Every character has a flaw, be it an internal weakness or an external threat. It could range from a drinking problem to a sworn enemy or to a doomed romance. Flaws need be neither large nor small, and have no specific mechanical effect, they’re just part of the character. As such, they don’t need to be in specific categories or lists, instead, simply describe the character's greatest flaw as succinctly as possible. Examples include "Bad temper", "Hunted by Cardinal Estreban of the Inquisition", "Fond of the ladies" and so on. The sole caveat is that if the flaw involves another character, like an enemy, it’s important to name them, otherwise the GM is obliged to make the unnamed NPC a monkey, a ninja, or a pirate. 
+
+D. Pick a Talent 
+Think of the one thing the character’s really good at, be it fencing, poetry, being keen-eyed, breaking things, or whatever else the one thing they excel at, above all others, is. Be a little specific. "Fencing" is reasonable, but "Killin’ things" might be a little broad. Let your GM know what this talent is, and if they say it’s ok, write it down in the box next to the word "Superb" on the character sheet. 
+
+IV. Skills in Play 
+When the GM calls for a skill check, she’ll usually call out what skill is necessary for the task at hand. Players who have other skills they think might be appropriate can chime in and the GM will decide if they’re appropriate and assign any penalties to suit. The kicker is that starting characters have no skills on their sheet other then their talent, which they have at Superb. 
+
+Whenever the GM calls for a roll, players have a few options. 
+
+     1. If they have the skill, they may roll it. 
+     2. If they don’t have the skill and have a blank slot on their 
+        character sheet, they can write the name of the skill down in 
+        that slot. They now have that skill at that level, and can roll it. 
+     3. Otherwise, the character writes the skill down in the "Poor" row, 
+        and may roll the skill at that level. Note that there is no limit
+        on how many skills a character can have at Poor. If they run out of 
+        slots, they can just add more to hold the extra skills. 
+
+What this means is that players are effectively choosing their characters' skills on the fly. Narratively, the characters are assumed to have always had the skills, it is simply that they are revealed to the audience, as they would be in a movie or novel, at that point in the story. 
+
+V. Fudge Points 
+A player should be awarded one extra Fudge Point at the end of any session where their flaw was a significant detriment to their activities. 
+
+VI. Development 
+From time to time, usually after the completion of an arc, the GM may call for a period of development. During a development period, players can reconsider their character’s strengths and weaknesses in terms of how that character may have changed or grown during that time. Each development period consists of a few steps: 
+
+A. Write a new blurb
+Assuming the character has grown or changed in some way, rewrite their blurb to reflect their new status. Make sure to keep a record of the old blurb: this creates a record of the character’s history which can be quite useful. 
+
+B. Consider the Flaw 
+If the character has overcome their flaw, or a more interesting flaw has come up, the player may opt to change the flaw to reflect this. 
+
+C. Rearrange skills - 
+The player may rearrange skills within their steps, moving skills up and down no mare than one step. The final distribution should remain in the stepped pattern on the character sheet. 
+
+
+
+VII. Optional Rules 
+A. Option #1: Stats 
+The default system assumes that only skills exist, and that anything that can be covered by stats like strength and toughness should be covered by appropriate skills. The failure of this model is when used in conjunction with combat systems which use stats as mechanical modifiers. In such a system, it's entirely possible to consider all such stats to be Fair (+0) and not worry about them. However, if it is important to your game to include stats, you may use any system you like for assigning stats without creating a problem. However, if you wish to assign stats in the same spirit which skills are assigned, it's a simple matter of creating similar slots for stats, and allowing players to choose them as they come up. For example, in a game that uses Strength, Toughness, Resolve and Wits, the core character sheet might look more like: 
+  Stats      Skills
+----------+-----------------------------------------------------------
+            Superb   [       ]
+[       ]   Great    [       ] [       ]
+[       ]   Good     [       ] [       ] [       ]
+[       ]   Fair     [       ] [       ] [       ] [       ]
+[       ]   Mediocre [       ] [       ] [       ] [       ] [       ]
+
+            Poor     [       ] [       ] [       ] [       ] [       ]
+                     [       ] [       ] [       ] [       ] [       ]
+                     [       ] [       ] [       ] [       ] [       ]
+
+This would mean that the character can set one stat at Great, one at Good, one at Fair and one at Mediocre, and they may do so over the course of the game, in the same manner as skills. 
+
+B. Option #2: Fate on the Fly
+This model applies equally easily to Fate as it does to Fudge, simply update the ladder, and replace the Stat boxes with however many aspects you consider appropriate.  As a rule of thumb, having the pyramid apex at Superb with 10 aspects seems the easiest model.
+Heroic
+ Aspects              Skills
+--------------------+-----------------------------------------------------------
+[       ] [       ] | Superb   [       ]
+[       ] [       ] | Great    [       ] [       ]
+[       ] [       ] | Good     [       ] [       ] [       ]
+[       ] [       ] | Fair     [       ] [       ] [       ] [       ]
+[       ] [       ] | Average  [       ] [       ] [       ] [       ] [       ]
+                    |
+                    | Mediocre [       ] [       ] [       ] [       ] [       ]
+                    |          [       ] [       ] [       ] [       ] [       ]
+                    |          [       ] [       ] [       ] [       ] [       ]						
+If an aspect has more than one box, simply enter it more than once.  No single aspect can be entered more than 3 times.
+
+C. Option #3: Advancement 
+Development exists as written to allow characters to evolve in a natural way. Interests and pursuits can grow more or less important, and the character can change to suit. The idea is that the young barbarian can eventually become a wise elder because he's changed his focus, not because he's added some political skills to his bucket of whupass. However, advancement, in the sense of characters growing more capable over time, is a classic staple of gaming, and many players would be uncomfortable without it. 
+
+The GM may declare any period of development (ideally one which takes place after a significant point in the game, such as the defeat of a major enemy or achievement of an important goal) to also be a period of advancement. When this happens, the player gets to add one more slot to one of his steps, which skills may then be moved into according to the normal development rules. Which step gains a slot depends on what advancement period this is. 
+
+ Advancement    Extra Slot in this Step 
+ ---------------------------------------
+ First          Mediocre 
+ Second         Fair 
+ Third          Good 
+ Fourth         Great 
+ Fifth          Superb 
+ Sixth          Superb +1 (Legendary) 
+
+These steps are additive, so a character who has had three advancement periods will have extra slots at Mediocre, Fair and Good. 
+
+VIII. For GMs
+On the Fly can also be used for NPCs.  After all, in general, when an NPC is introduced, you usually only have a few things sketched out about them: one or two important skills, maybe an aspect or two, and some sense of how they’ll play out in the scene.  Statting up such a character fully is usually a waste of time, but sometimes situations come up where the situation drastically changes, and you need to know what the Ambassador’s fencing skill is.  Alternately, your players may latch onto one of your "throwaway" NPCs, in which case you find yourself needing to flesh them out a little.  In these situations, the GM may build the NPCs sheet the exact same way that a PC is built.
+To help unify notetaking, the easiest way to represent an NPC is in terms of their "apex skill", which is to say, the skill they have the highest rating in.  The bulk of situations can usually be covered by simply detailing the apex skill, the two skills immediately beneath it This allows a simple template:
+
+ +---------------------------------+
+ |  Rank     Skills                |
+ | ________ [       ]              |
+ | ________ [       ] [       ]    |
+ |                                 |
+ | Flaw: _________________________ |
+ +---------------------------------+
+So a beat cop might be a minor character, so his apex skill is ranked at only good.  The on the fly version might look like:
+
+ +---------------------------------+
+ |  Rank     Skills                |
+ | Good      Guns                  |
+ | Fair     [       ] [       ]    |
+ |                                 |
+ | Flaw: On the Take               |
+ +---------------------------------+
+
+
+A. Fate Variant
+For Fate, just remove the flaw, and add in two aspects.
+
+ +-----------+-----------------------------+
+ |   Aspect  |Rank      Skills             |
+ | [       ] |________ [       ]           |
+ | [       ] |________ [       ] [       ] |
+ +-----------+-----------------------------+
+
+So in the case of our cop:
+
+ +-----------+-----------------------------+
+ |   Aspect  |Rank      Skills             |
+ | [Dirty  ] |Good      Guns               |
+ | [Guilt  ] |Fair     [       ] [       ] |
+ +-----------+-----------------------------+
+
+			
+
+IX. Example of Play 
+
+Deborah sits down to make a character. She wants to play a political type, a minor but ambitious noble. With that in mind, she gets started. 
+
+Name: She steals from one of her favorite books, and takes the name Baroness Diane Nichelli. 
+
+Blurb: This one’s easy: "Ambitious, scheming noblewoman." 
+
+Flaw: There are a number of options. Enemies is a strong contender, but since Diane is still a minor player, Deborah opts for something more internal and decides that Diane is "Arrogant." 
+
+Talent: Deborah thinks about a number of skills that might be useful for a politician, and decides she wants Diane to be an excellent judge of character, especially of a person’s honesty. She could probably call this "Sense motive" or even "Sense Lies" but she opts for the more colorful "Cold Read". 
+ +-----------------------------------------------------------+
+ | Baroness Diane Michelli                                   |
+ | Ambitious, Scheming Noblewoman                            |
+ +-----------------------------------------------------------+
+ |Superb   Cold Read                                         |
+ |Great    [       ] [       ]                               |
+ |Good     [       ] [       ] [       ]                     |
+ |Fair     [       ] [       ] [       ] [       ]           |
+ |Mediocre [       ] [       ] [       ] [       ] [       ] |
+ |                                                           |
+ |Poor     [       ] [       ] [       ] [       ] [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |                                                           |
+ | Flaw:   Arrogant                                          |
+ +-----------------------------------------------------------+
+
+The game begins and a conspiracy of coincidences result in Diane fleeing into the night on horseback. The GM asks what her riding skill is. She has none on her sheet, and Deborah gives it a moments thought. While Diane is hardly a jockey, she has been taught the fundamentals, so she writes down "Riding" next to Mediocre. 
+
+Later, there is a question of how she’s going to pay for her gown and servants for the upcoming ball, so Deborah quickly scribbles down "Wealth" next to Great, and the issue is resolved. 
+
+At that ball, Diane is accosted by another lady of the court in a most unladylike fashion. The ensuing scuffle calls for a brawl check. Deborah thinks Diane has no real talent for brawling, and writes it down next to "Poor". Thankfully, her opponent is not much better. 
+
+At this point in the game, her character sheet looks like this: 
+
+
+ +-----------------------------------------------------------+
+ | Baroness Diane Michelli                                   |
+ | Ambitious, Scheming Noblewoman                            |
+ +-----------------------------------------------------------+
+ |Superb    Cold Read                                        |
+ |Great     Wealth   [       ]                               |
+ |Good     [       ] [       ] [       ]                     |
+ |Fair     [       ] [       ] [       ] [       ]           |
+ |Mediocre  Riding   [       ] [       ] [       ] [       ] |
+ |                                                           |
+ |Poor      Brawling [       ] [       ] [       ] [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |                                                           |
+ | Flaw:   Arrogant                                          |
+ +-----------------------------------------------------------+
+
+
+
+A. Example of Devlopment 
+In time Diane's sheet is fully fleshed out and reads as follows: 
+ +-----------------------------------------------------------+
+ | Baroness Diane Michelli                                   |
+ | Ambitious, Scheming Noblewoman                            |
+ +-----------------------------------------------------------+
+ |Superb    Cold Read                                        |
+ |Great     Wealth    Lying                                  |
+ |Good      Dagger    Observe   Diplomacy                    |
+ |Fair      Fashion   Gossip    Dance     Administrate       |
+ |Mediocre  Riding    Athlete   Sing      Codes     Hysterics|
+ |                                                           |
+ |Poor      Brawling  Fencing   Swimming  Stealth  [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |                                                           |
+ | Flaw:   Arrogant                                          |
+ +-----------------------------------------------------------+
+
+She goes through the steps of development: 
+
+New Blurb: Ambitious Lady of the Court, reknown for her parties. 
+
+Consider Flaw: Arrogant has done well for her, but she’s made some delightful enemies, so she replaces it with "Enemies with the Viscount Breneal". 
+
+Rearrange Skills: While she’s mostly happy with the current layout, She wants to make a few changes. Codes are proving more valuable than dances, so she swaps Codes and Dance. 
+
+Additionally, Gossip has proven much more useful than Dagger, so she swaps the two of them. Ideally, she’d like to move Gossip up to Great, but she can’t move it two steps in one development period. Now, her sheet reads: 
+ +-----------------------------------------------------------+
+ | Baroness Diane Michelli                                   |
+ | Ambitious, Scheming Noblewoman                            |
+ +-----------------------------------------------------------+
+ |Superb    Cold Read                                        |
+ |Great     Wealth    Lying                                  |
+ |Good      Gossip    Observe   Diplomacy                    |
+ |Fair      Fashion   Dagger    Codes     Administrate       |
+ |Mediocre  Riding    Athlete   Sing      Dance     Hysterics|
+ |                                                           |
+ |Poor      Brawling  Fencing   Swimming  Stealth  [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |         [       ] [       ] [       ] [       ] [       ] |
+ |                                                           |
+ | Flaw:   Enemies with the Viscount Breneal                                          |
+ +-----------------------------------------------------------+
+
+X. In Summary 
+Fudge on the Fly is designed to be fast and easy to use. It's a flexible concept that can be easily adapted to almost any approach to play, and can be adjusted to a variety of flavors through the simple addition and subtraction of slots. It plays to one of Fudge's strengths in stepping away from mechanical character creation and just stepping into the story where things "make sense" to a lot of gamers. At the same time, any player who is uncomfortable with choosing skills on the fly is naturally welcome to fill in their slots ahead of time, so it should not prove too difficult a compromise. 
+
+XI. Copyright Information
+
+OPEN GAME LICENSE Version 1.0a
+
+The following text is the property of Wizards of the Coast, Inc. and is Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights Reserved.
+
+1. Definitions: (a)"Contributors" means the copyright and/or trademark owners who have contributed Open Game Content; (b)"Derivative Material" means copyrighted material including derivative works and translations (including into other computer languages), potation, modification, correction, addition, extension, upgrade, improvement, compilation, abridgment or other form in which an existing work may be recast, transformed or adapted; (c) "Distribute" means to reproduce, license, rent, lease, sell, broadcast, publicly display, transmit or otherwise distribute; (d)"Open Game Content" means the game mechanic and includes the methods, procedures, processes and routines to the extent such content does not embody the Product Identity and is an enhancement over the prior art and any additional content clearly identified as Open Game Content by the Contributor, and means any work covered by this License, including translations and derivative works under copyright law, but specifically excludes Product Identity. (e) "Product Identity" means product and product line names, logos and identifying marks including trade dress; artifacts; creatures characters; stories, storylines, plots, thematic elements, dialogue, incidents, language, artwork, symbols, designs, depictions, likenesses, formats, poses, concepts, themes and graphic, photographic and other visual or audio representations; names and descriptions of characters, spells, enchantments, personalities, teams, personas, likenesses and special abilities; places, locations, environments, creatures, equipment, magical or supernatural abilities or effects, logos, symbols, or graphic designs; and any other trademark or registered trademark clearly identified as Product identity by the owner of the Product Identity, and which specifically excludes the Open Game Content; (f) "Trademark" means the logos, names, mark, sign, motto, designs that are used by a Contributor to identify itself or its products or the associated products contributed to the Open Game License by the Contributor (g) "Use", "Used" or "Using" means to use, Distribute, copy, edit, format, modify, translate and otherwise create Derivative Material of Open Game Content. (h) "You" or "Your" means the licensee in terms of this agreement.
+
+2. The License: This License applies to any Open Game Content that contains a notice indicating that the Open Game Content may only be Used under and in terms of this License. You must affix such a notice to any Open Game Content that you Use. No terms may be added to or subtracted from this License except as described by the License itself. No other terms or conditions may be applied to any Open Game Content distributed using this License.
+
+3.Offer and Acceptance: By Using the Open Game Content You indicate Your acceptance of the terms of this License.
+
+4. Grant and Consideration: In consideration for agreeing to use this License, the Contributors grant You a perpetual, worldwide, royalty-free, non-exclusive license with the exact terms of this License to Use, the Open Game Content.
+
+5.Representation of Authority to Contribute: If You are contributing original material as Open Game Content, You represent that Your Contributions are Your original creation and/or You have sufficient rights to grant the rights conveyed by this License.
+
+6.Notice of License Copyright: You must update the COPYRIGHT NOTICE portion of this License to include the exact text of the COPYRIGHT NOTICE of any Open Game Content You are copying, modifying or distributing, and You must add the title, the copyright date, and the copyright holder's name to the COPYRIGHT NOTICE of any original Open Game Content you Distribute.
+
+7. Use of Product Identity: You agree not to Use any Product Identity, including as an indication as to compatibility, except as expressly licensed in another, independent Agreement with the owner of each element of that Product Identity. You agree not to indicate compatibility or co-adaptability with any Trademark or Registered Trademark in conjunction with a work containing Open Game Content except as expressly licensed in another, independent Agreement with the owner of such Trademark or Registered Trademark. The use of any Product Identity in Open Game Content does not constitute a challenge to the ownership of that Product Identity. The owner of any Product Identity used in Open Game Content shall retain all rights, title and interest in and to that Product Identity.
+
+8. Identification: If you distribute Open Game Content You must clearly indicate which portions of the work that you are distributing are Open Game Content.
+
+9. Updating the License: Wizards or its designated Agents may publish updated versions of this License. You may use any authorized version of this License to copy, modify and distribute any Open Game Content originally distributed under any version of this License.
+
+10 Copy of this License: You MUST include a copy of this License with every copy of the Open Game Content You Distribute.
+
+11. Use of Contributor Credits: You may not market or advertise the Open Game Content using the name of any Contributor unless You have written permission from the Contributor to do so.
+
+12 Inability to Comply: If it is impossible for You to comply with any of the terms of this License with respect to some or all of the Open Game Content due to statute, judicial order, or governmental regulation then You may not Use any Open Game Material so affected.
+
+13 Termination: This License will terminate automatically if You fail to comply with all terms herein and fail to cure such breach within 30 days of becoming aware of the breach. All sublicenses shall survive the termination of this License.
+
+14 Reformation: If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable.
+
+15 COPYRIGHT NOTICE
+Open Game License v 1.0 Copyright 2000, Wizards of the Coast, Inc.
+Fudge System 1995 version copyright 1992-1995 by Steffan O'Sullivan, copyright 2005 by Grey Ghost Press, Inc.; Author Steffan O'Sullivan. 
+FATE (Fantastic Adventures in Tabletop Entertainment) copyright 2003 by Evil Hat Productions; Authors Robert Donoghue and Fred Hicks
+Fudge on the Fly Copyright 2004, Robert Donoghue
+
+
+
