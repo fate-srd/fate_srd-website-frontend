@@ -88,6 +88,13 @@ const Footer = () => (
 
       <div className="site-footer__legal" aria-label="Legal Text">
         <div className="content">
+          <p className="big">
+            Evil Hat Productions, creators of the Fate role-playing game system,
+            officially endorses the Fate SRD website as the definitive source
+            for all Fate System Reference Documents. This endorsement affirms
+            the site&rsquo;s commitment to providing comprehensive and accurate
+            resources for the Fate gaming community.
+          </p>
           <p>
             This site is copyright 2013–{new Date().getFullYear()}&nbsp;
             <a href="http://randyoest.com">Amazing Rando Design</a>, except

@@ -54,7 +54,8 @@ class Header extends React.Component {
     return (
       <header className="site-header">
         <div className="site-header__branding">
-          <Link href="/">
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <span className="site-header__official">The official</span>
             <Image
               src={logo}
               alt="Fate SRD Logo"
@@ -72,11 +73,14 @@ class Header extends React.Component {
             aria-label="Primary Navigation"
           >
             <div className="site-header__branding site-header__branding--inside">
-              <Image
-                src={logo}
-                alt="Fate SRD Logo"
-                className="site-header__logo"
-              />
+              <div>
+                <span className="site-header__official">The official</span>
+                <Image
+                  src={logo}
+                  alt="Fate SRD Logo"
+                  className="site-header__logo"
+                />
+              </div>
               <div className="site-header__branding__menu-toggle">
                 <FontAwesomeIcon icon={faTimes} className="times" />
               </div>
