@@ -393,7 +393,7 @@ section.card .aspect {
   font-size: .95em;
   padding: 0 .25em;
 }
-/* Generated with Bounce.js. Edit at http://bouncejs.com/#{s:[{T:"k",e:"s",d:750,D:0,f:{x:0,y:0},t:{x:20,y:20},s:3,b:4},{T:"c",e:"b",d:750,D:0,f:{x:1,y:1},t:{x:1,y:1},s:2,b:4}]} */
+/* Generated with Bounce.js. Edit at https://bouncejs.com/#{s:[{T:"k",e:"s",d:750,D:0,f:{x:0,y:0},t:{x:20,y:20},s:3,b:4},{T:"c",e:"b",d:750,D:0,f:{x:1,y:1},t:{x:1,y:1},s:2,b:4}]} */
 @keyframes animation {
   0% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);

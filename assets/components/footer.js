@@ -14,10 +14,10 @@ const fateTranslations = {
     'https://fatesrdbrasil.gitlab.io/fate-srd-brasil/',
   'Fate SRD in Korean 1': 'https://sites.google.com/site/fatecorekr/home',
   'Fate SRD in Korean 2':
-    'http://ko.trpgkr.wikidok.net/wp-d/5d1db45ca4a7f1be66b95a44/View',
+    'https://ko.trpgkr.wikidok.net/wp-d/5d1db45ca4a7f1be66b95a44/View',
   'Fate SRD in Japanese': 'https://w.atwiki.jp/fatesrdj/',
   'Fate SRD in Chinese': 'https://www.sites.google.com/site/faterpg/fate',
-  'Fate SRD in Czech (+Slovak)': 'http://fatesrd.d20.cz',
+  'Fate SRD in Czech (+Slovak)': 'https://fatesrd.d20.cz',
 };
 
 const Footer = () => (
@@ -36,7 +36,10 @@ const Footer = () => (
       >
         <ul className="site-footer__ul">
           <li className="site-footer__li">
-            <a className="site-footer__link" href="https://youtube.com/FateSRD">
+            <a
+              className="site-footer__link"
+              href="https://www.youtube.com/FateSRD"
+            >
               <FontAwesomeIcon icon={faYoutube} /> YouTube
             </a>
           </li>
@@ -97,7 +100,7 @@ const Footer = () => (
           </p>
           <p>
             This site is copyright 2013–{new Date().getFullYear()}&nbsp;
-            <a href="http://randyoest.com">Amazing Rando Design</a>, except
+            <a href="https://randyoest.com">Amazing Rando Design</a>, except
             where otherwise noted. It is only possible because of the generous
             nature of Evil Hat Productions, LLC, who, in their wisdom, opened up
             the system to improve the Fate RPG ecosystem. Give them monies.
@@ -125,7 +128,7 @@ const Footer = () => (
           </p>
           <p>
             This work is based on Fate Condensed (found at
-            http://www.faterpg.com/), a product of Evil Hat Productions, LLC,
+            https://www.faterpg.com/), a product of Evil Hat Productions, LLC,
             developed, authored, and edited by PK Sullivan, Ed Turner, Leonard
             Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin,
             and Sophie Lagacé, and licensed for our use under the{' '}

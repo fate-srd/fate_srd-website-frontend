@@ -22,7 +22,7 @@ Simple: (no BEM renaming)
 
 ```
 <svg class="icon">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons.svg#src--menu"></use>
+  <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="/icons.svg#src--menu"></use>
 </svg>
 ```
 
@@ -40,6 +40,6 @@ Complex (BEM classes):
 
 ```
 <svg class="main-nav__toggle">
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons.svg#src--menu"></use>
+  <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="/icons.svg#src--menu"></use>
 </svg>
 ```

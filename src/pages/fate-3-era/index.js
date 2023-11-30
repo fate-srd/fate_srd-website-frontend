@@ -32,7 +32,7 @@ const Page = () => (
           </a>
         </li>
         <li>
-          <a href="public/downloads/fate-3/Material-Genericized-from-Dresden-Files-RPG/charactercreation.html">
+          <a href="/downloads/fate-3/Material-Genericized-from-Dresden-Files-RPG/charactercreation.html">
             Character Creation
           </a>
         </li>

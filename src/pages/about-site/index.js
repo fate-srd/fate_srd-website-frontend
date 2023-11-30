@@ -54,8 +54,8 @@ const Page = () => (
       <p>
         This site is a labor of love, inspired by the great SRD sites that came
         before it, e.g.,{' '}
-        <a href="http://www.d20srd.org/index.htm">Hypertext d20</a> and{' '}
-        <a href="http://www.d20pfsrd.com/home">d20PFSRD.org</a>.
+        <a href="https://www.d20srd.org/index.htm">Hypertext d20</a> and{' '}
+        <a href="https://www.d20pfsrd.com/home">d20PFSRD.org</a>.
       </p>
 
       <p>

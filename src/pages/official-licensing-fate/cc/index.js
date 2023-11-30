@@ -131,14 +131,14 @@ const Page = () => (
       </p>
       <blockquote className="formal">
         This work is based on Fate Core System and Fate Accelerated Edition
-        (found at <a href="http://www.faterpg.com/">http://www.faterpg.com/</a>
+        (found at <a href="https://www.faterpg.com/">https://www.faterpg.com/</a>
         ), products of Evil Hat Productions, LLC, developed, authored, and
         edited by Leonard Balsera, Brian Engard, Jeremy Keller, Ryan Macklin,
         Mike Olson, Clark Valentine, Amanda Valentine, Fred Hicks, and Rob
         Donoghue, and licensed for our use under the Creative Commons
         Attribution 3.0 Unported license (
-        <a href="http://creativecommons.org/licenses/by/3.0/">
-          http://creativecommons.org/licenses/by/3.0/
+        <a href="https://creativecommons.org/licenses/by/3.0/">
+          https://creativecommons.org/licenses/by/3.0/
         </a>
         ).
       </blockquote>
@@ -152,11 +152,11 @@ const Page = () => (
       <p>
         If you’re publishing electronically, you can make “Creative Commons
         Attribution 3.0 Unported license” a link to{' '}
-        <a href="http://creativecommons.org/licenses/by/3.0/">
-          http://creativecommons.org/licenses/by/3.0/
+        <a href="https://creativecommons.org/licenses/by/3.0/">
+          https://creativecommons.org/licenses/by/3.0/
         </a>{' '}
         and “Fate Core System” a link to{' '}
-        <a href="http://www.faterpg.com/">http://www.faterpg.com/</a>, instead
+        <a href="https://www.faterpg.com/">https://www.faterpg.com/</a>, instead
         of printing the URLs separately.
       </p>
       <h2 id="using-the-cc-licensed-fate-core-srd-with-the-ogl">

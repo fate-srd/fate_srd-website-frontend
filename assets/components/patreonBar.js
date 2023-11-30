@@ -8,7 +8,7 @@ const PatreonLogo = () => (
     height="620"
     viewBox="0 0 1827 620"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    xmlns="https://www.w3.org/2000/svg"
     className="patreon-bar__logo"
   >
     <path
