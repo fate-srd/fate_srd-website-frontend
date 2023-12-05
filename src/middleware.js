@@ -2,9 +2,11 @@ import { NextResponse } from 'next/server';
 
 export async function middleware(request) {
   // console.log('request', typeof request, request);
-  let newURL = '/';
+  console.log('START');
   const splitPath = request.nextUrl.pathname.split('/');
-  if (splitPath[1] === 'node') {
+
+  const newURL = () => {
+    console.log('fetching');
     fetch(
       `https://fatesrd.amazingrando.dev/jsonapi/node/article?filter%5Bdrupal_internal__nid%5D=${splitPath[2]}`,
       {
@@ -13,9 +15,18 @@ export async function middleware(request) {
     )
       .then((response) => response.json())
       .then((json) => {
-        newURL = request.nextUrl.origin + json.data[0].attributes.path.alias;
-        return NextResponse.redirect(new URL(newURL, request.url));
+        console.log('fetch worked');
+        console.log('json', json.data.length);
+        const destinationURL = json.data[0].attributes.path.alias
+          ? request.nextUrl.origin + json.data[0].attributes.path.alias
+          : '/';
+        console.log('destinationURL', destinationURL);
+        return NextResponse.redirect(new URL(destinationURL, request.url));
       });
+  };
+
+  if (splitPath[1] === 'node') {
+    newURL();
   }
 }
 
