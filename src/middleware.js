@@ -1,6 +1,8 @@
-import { NextResponse } from 'next/server';
+// import { NextResponse } from 'next/server';
+import { MiddlewareRequest, MiddlewareResponse } from '@netlify/next';
 
-export async function middleware(request) {
+export async function middleware(nextRequest) {
+  const request = new MiddlewareRequest(nextRequest);
   // console.log('request', typeof request, request);
   console.log('START');
   const splitPath = request.nextUrl.pathname.split('/');
@@ -21,7 +23,9 @@ export async function middleware(request) {
           ? request.nextUrl.origin + json.data[0].attributes.path.alias
           : '/';
         console.log('destinationURL', destinationURL);
-        return NextResponse.redirect(new URL(destinationURL, request.url));
+        return MiddlewareResponse.redirect(
+          new URL(destinationURL, request.url)
+        );
       });
   };
 
