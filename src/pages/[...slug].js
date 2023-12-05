@@ -60,8 +60,8 @@ export default function NodePage({ resource, ruleBook }) {
     pageTitle = resource.title;
   } else {
     pageContent =
-      resource.body.processed !== ''
-        ? resource.body.processed
+      resource.body?.processed !== ''
+        ? resource.body?.processed
         : resource.body.value;
     pageTitle = `${resource.title} • ${book}`;
   }
@@ -70,6 +70,7 @@ export default function NodePage({ resource, ruleBook }) {
 
   return (
     <Layout aside={resource.type !== 'pages'}>
+      {/* {console.log('resource', resource)} */}
       <Head>
         <title>{pageTitle}</title>
       </Head>
