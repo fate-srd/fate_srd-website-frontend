@@ -14,7 +14,7 @@ export async function middleware(request) {
       .then((response) => response.json())
       .then((json) => {
         newURL = request.nextUrl.origin + json.data[0].attributes.path.alias;
-        return NextResponse.redirect(new URL(newURL));
+        return NextResponse.redirect(new URL(newURL, request.url));
       });
   }
 }
