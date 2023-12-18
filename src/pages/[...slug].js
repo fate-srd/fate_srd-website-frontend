@@ -37,7 +37,7 @@ export default function NodePage({ resource, ruleBook }) {
       return content;
     };
     setToc(tocContent());
-  }, []);
+  }, [resource]);
 
   if (!resource) return null;
   const book = ruleBook ? ruleBook[0]?.name : '';
@@ -70,7 +70,6 @@ export default function NodePage({ resource, ruleBook }) {
 
   return (
     <Layout aside={resource.type !== 'pages'}>
-      {/* {console.log('resource', resource)} */}
       <Head>
         <title>{pageTitle}</title>
       </Head>
