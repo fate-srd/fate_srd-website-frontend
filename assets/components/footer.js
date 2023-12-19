@@ -6,7 +6,6 @@ import Image from 'next/image';
 import logo from '../images/logo.svg';
 
 const fateTranslations = {
-  'Fate SRD in Spanish': 'https://fate.1d12monos.com/',
   'Fate SRD in German': 'https://srd.faterpg.de/',
   'Fate SRD in Italian': 'https://www.fateitalia.it/',
   'Fate SRD in French': 'https://fate-srd.fr/',
