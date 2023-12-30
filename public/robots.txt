@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://fate-srd.com
+
+# Sitemaps
+Sitemap: https://fate-srd.com/sitemap.xml
