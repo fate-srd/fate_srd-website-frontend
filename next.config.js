@@ -11,6 +11,12 @@ const nextConfig = {
         permanent: true,
         basePath: false,
       },
+      {
+        source: '/stuntmaker',
+        destination: '/stuntmaker/index.html',
+        permanent: true,
+        basePath: false,
+      },
     ];
   },
 };
