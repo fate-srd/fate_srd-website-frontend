@@ -127,7 +127,7 @@ const Page = () => (
       <p>So, how do you give us credit for our work?</p>
       <p>
         This is really simple. Wherever you put your own copyright, add the
-        following paragraph:
+        following text:
       </p>
       <blockquote className="formal">
         This work is based on Fate Core System and Fate Accelerated Edition
@@ -142,6 +142,18 @@ const Page = () => (
           https://creativecommons.org/licenses/by/3.0/
         </a>
         ).
+        <br />
+        <br />
+        This work is based on Fate Condensed (found at{' '}
+        <a href="https://www.faterpg.com/">https://www.faterpg.com/</a>), a
+        product of Evil Hat Productions, LLC, developed, authored, and edited by
+        PK Sullivan, Ed Turner, Leonard Balsera, Fred Hicks, Richard Bellingham,
+        Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use
+        under the
+        <a href="https://creativecommons.org/licenses/by/3.0/">
+          Creative Commons Attribution 3.0 Unported license.
+        </a>
+        .
       </blockquote>
       <p>
         All the text has to be the same size as the rest of your copyright
