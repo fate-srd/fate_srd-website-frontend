@@ -70,9 +70,8 @@ const Page = () => (
       </p>
       <p>
         Fate Condensed © 2020, a product of Evil Hat Productions, LLC,
-        developed, authored, and edited by PK Sullivan, Ed Turner, Leonard
-        Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin, and
-        Sophie Lagacé.
+        developed, authored, and edited by PK Sullivan, Lara Turner, Fred Hicks,
+        Richard Bellingham, Robert Hanz, and Sophie Lagacé.
       </p>
       <p>
         [Include the appropriate Section 15 Copyright Notice information from

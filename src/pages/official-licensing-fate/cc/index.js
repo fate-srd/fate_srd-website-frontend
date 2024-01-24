@@ -142,14 +142,13 @@ const Page = () => (
           https://creativecommons.org/licenses/by/3.0/
         </a>
         ).
-        <br />
-        <br />
+      </blockquote>
+      <blockquote className="formal">
         This work is based on Fate Condensed (found at{' '}
         <a href="https://www.faterpg.com/">https://www.faterpg.com/</a>), a
         product of Evil Hat Productions, LLC, developed, authored, and edited by
-        PK Sullivan, Ed Turner, Leonard Balsera, Fred Hicks, Richard Bellingham,
-        Robert Hanz, Ryan Macklin, and Sophie Lagacé, and licensed for our use
-        under the
+        PK Sullivan, Lara Turner, Fred Hicks, Richard Bellingham, Robert Hanz,
+        and Sophie Lagacé, and licensed for our use under the{' '}
         <a href="https://creativecommons.org/licenses/by/3.0/">
           Creative Commons Attribution 3.0 Unported license.
         </a>
