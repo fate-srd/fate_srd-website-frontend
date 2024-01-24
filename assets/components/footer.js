@@ -104,7 +104,6 @@ const Footer = () => (
             nature of Evil Hat Productions, LLC, who, in their wisdom, opened up
             the system to improve the Fate RPG ecosystem. Give them monies.
           </p>
-          <p>This site is not affiliated with Evil Hat Productions, LLC.</p>
           <p>
             This work is based on Fate Core System and Fate Accelerated Edition,
             products of Evil Hat Productions, LLC, developed, authored, and
@@ -126,13 +125,13 @@ const Footer = () => (
             permission. The Four Actions icons were designed by Jeremy Keller.
           </p>
           <p>
-            This work is based on Fate Condensed (found at
-            https://www.faterpg.com/), a product of Evil Hat Productions, LLC,
-            developed, authored, and edited by PK Sullivan, Ed Turner, Leonard
-            Balsera, Fred Hicks, Richard Bellingham, Robert Hanz, Ryan Macklin,
-            and Sophie Lagacé, and licensed for our use under the{' '}
+            This work is based on Fate Condensed (found at{' '}
+            <a href="https://www.faterpg.com/">https://www.faterpg.com/</a>), a
+            product of Evil Hat Productions, LLC, developed, authored, and
+            edited by PK Sullivan, Lara Turner, Fred Hicks, Richard Bellingham,
+            Robert Hanz, and Sophie Lagacé, and licensed for our use under the{' '}
             <a href="https://creativecommons.org/licenses/by/3.0/">
-              Creative Commons Attribution 3.0 Unported license
+              Creative Commons Attribution 3.0 Unported license.
             </a>
             .
           </p>

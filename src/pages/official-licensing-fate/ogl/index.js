@@ -69,6 +69,11 @@ const Page = () => (
         Amanda Valentine, Fred Hicks, and Rob Donoghue
       </p>
       <p>
+        Fate Condensed © 2020, a product of Evil Hat Productions, LLC,
+        developed, authored, and edited by PK Sullivan, Lara Turner, Fred Hicks,
+        Richard Bellingham, Robert Hanz, and Sophie Lagacé.
+      </p>
+      <p>
         [Include the appropriate Section 15 Copyright Notice information from
         any additional Fudge and/or Fate Open Game Content used in this
         document]
