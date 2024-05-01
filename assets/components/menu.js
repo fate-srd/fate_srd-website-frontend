@@ -109,7 +109,10 @@ const Menu = ({ value }) => {
         };
         const inActivePathBool = inActivePath();
         const children = hasChildren && (
-          <ul className={`${classBase}__ul ${classBase}__ul--child`}>
+          <ul
+            className={`${classBase}__ul ${classBase}__ul--child`}
+            key={classBase}
+          >
             {buildMenu(item.items, currentPathname)}
           </ul>
         );
