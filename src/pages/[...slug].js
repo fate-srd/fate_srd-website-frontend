@@ -72,6 +72,8 @@ export default function NodePage({ resource, ruleBook }) {
     <Layout aside={resource.type !== 'pages'}>
       <Head>
         <title>{pageTitle}</title>
+        <meta property="og:title" content={pageTitle} key="title" />
+        <meta property="og:type" content="website" />
       </Head>
       <main className="main-content-wrapper" role="main">
         <p className="rules-section">{book}</p>
