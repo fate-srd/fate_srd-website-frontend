@@ -123,7 +123,7 @@ const StoreCard = ({ card }) => {
     <div className="store-card">
       <div
         className="store-card__image-content"
-        style={{ backgroundImage: `url(${bkgImage})`, backgroundSize: 'cover' }}
+        style={{ backgroundImage: `url(${bkgImage.src})`, backgroundSize: 'cover' }}
       >
         <Image src={image} alt={title} className="store-card__image" />
       </div>
