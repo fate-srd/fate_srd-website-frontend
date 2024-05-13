@@ -8,7 +8,7 @@ export function Layout({ children, aside }) {
     <div className="page-wrapper">
       <Head>
         <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
-        <meta property="og:image" content="https:/fate-srd.com/images/sharing.png" />
+        <meta property="og:image" content="https://fate-srd.com/images/sharing.png" />
       </Head>
       <Header />
       <div className="site-main">
