@@ -1,0 +1,17 @@
+.btn {
+  display: block;
+  background: var(--color-blue);
+  border-radius: var(--border-radius-small);
+  color: var(--color-white) !important;
+  font-weight: 800;
+  text-decoration: none;
+  padding: var(--s05) var(--s);
+  align-self: flex-start;
+  text-transform: uppercase;
+  margin-bottom: var(--s05);
+  width: max-content;
+
+  &:hover {
+    background: var(--color-blue-dark);
+  }
+}
