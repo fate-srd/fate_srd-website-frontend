@@ -1,5 +1,6 @@
 :root {
   --font-color: var(--color-dark);
+  --font-size-large: clamp(1rem, 2.1vw, 1.3rem);
   --font-size: clamp(0.9375rem, 1.6vw, 1.125rem);
   --font-size-small: clamp(0.8375rem, 1.4vw, 1rem);
   --line-height: 1.4;
@@ -20,6 +21,10 @@ p {
 
 .small {
   font-size: var(--font-size-small);
+}
+
+p.large {
+  font-size: var(--font-size-large);
 }
 
 @for $i from 1 through 6 {
