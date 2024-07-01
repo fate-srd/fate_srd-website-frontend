@@ -99,7 +99,7 @@ const Footer = () => (
           </p>
           <p>
             This site is copyright 2013–{new Date().getFullYear()}&nbsp;
-            <a href="https://randyoest.com">Amazing Rando Design</a>, except
+            <a href="https://amazingrando.com">Amazing Rando Design</a>, except
             where otherwise noted. It is only possible because of the generous
             nature of Evil Hat Productions, LLC, who, in their wisdom, opened up
             the system to improve the Fate RPG ecosystem. Give them monies.
@@ -151,9 +151,5 @@ const Footer = () => (
     </div>
   </footer>
 );
-
-Footer.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Footer;
