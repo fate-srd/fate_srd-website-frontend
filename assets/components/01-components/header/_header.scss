@@ -289,17 +289,6 @@
       }
     }
 
-    .new-label {
-      background: var(--color-new);
-      color: var(--color-white);
-      font-size: 0.6rem;
-      padding: .125rem .25rem;
-      border-radius: 1000px;
-      position: relative;
-      top: -3px;
-      margin-right: 4px;
-    }
-
     dt {
       margin: 0 0 var(--s05);
       color: var(--color-dark);
@@ -394,16 +383,6 @@
         border-bottom: none;
         padding-bottom: 0;
       }
-    }
-
-    .new-label {
-      background: var(--color-new);
-      color: var(--color-white);
-      font-size: 0.6rem;
-      padding: .125rem .25rem;
-      border-radius: 1000px;
-      position: relative;
-      top: 4px;
     }
 
     dt {
