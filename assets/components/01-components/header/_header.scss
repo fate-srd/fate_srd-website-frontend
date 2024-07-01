@@ -414,10 +414,13 @@
       text-decoration: none;
       transition: all 0.15s;
       white-space: nowrap;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: 0.15s;
 
       &:hover {
         color: var(--color-blue-darker);
-        text-decoration: underline;
+        text-decoration-color: var(--color-blue-darker);
       }
     }
   }
