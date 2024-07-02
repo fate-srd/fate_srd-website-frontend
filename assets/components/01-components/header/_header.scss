@@ -289,17 +289,6 @@
       }
     }
 
-    .new-label {
-      background: var(--color-new);
-      color: var(--color-white);
-      font-size: 0.6rem;
-      padding: .125rem .25rem;
-      border-radius: 1000px;
-      position: relative;
-      top: -3px;
-      margin-right: 4px;
-    }
-
     dt {
       margin: 0 0 var(--s05);
       color: var(--color-dark);
@@ -396,16 +385,6 @@
       }
     }
 
-    .new-label {
-      background: var(--color-new);
-      color: var(--color-white);
-      font-size: 0.6rem;
-      padding: .125rem .25rem;
-      border-radius: 1000px;
-      position: relative;
-      top: 4px;
-    }
-
     dt {
       margin-bottom: var(--s05);
       color: var(--color-dark);
@@ -435,10 +414,13 @@
       text-decoration: none;
       transition: all 0.15s;
       white-space: nowrap;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      transition: 0.15s;
 
       &:hover {
         color: var(--color-blue-darker);
-        text-decoration: underline;
+        text-decoration-color: var(--color-blue-darker);
       }
     }
   }
