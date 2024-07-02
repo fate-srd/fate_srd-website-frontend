@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import logo from '../images/logo.svg';
 
@@ -45,9 +45,9 @@ const Footer = () => (
           <li className="site-footer__li" style={{ marginBottom: '2rem' }}>
             <a
               className="site-footer__link"
-              href="https://twitter.com/Fate_SRD"
+              href="https://www.patreon.com/fate_srd"
             >
-              <FontAwesomeIcon icon={faTwitter} /> Twitter
+              <FontAwesomeIcon icon={faPatreon} /> Patreon
             </a>
           </li>
           <li className="site-footer__li">
