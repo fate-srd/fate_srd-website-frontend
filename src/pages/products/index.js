@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { Layout } from '../../../assets/components/layout';
 import Papa from 'papaparse';
 import { useEffect, useState } from 'react';
@@ -26,8 +25,8 @@ const Products = () => {
     const productList = {};
 
     data.data.forEach((product) => {
-      const title = product[0];
-      const publisher = product[1];
+      const title = product[1];
+      const publisher = product[0];
       const link = product[2];
       const productInfo = { title, link };
     
@@ -53,12 +52,10 @@ const Products = () => {
     }
 
     fetchData();
-  
   }, [])
 
   return (
     <Layout>
-      {products && console.log(products, 'products')}
       <Head>
         <title>Fate Games &amp; Products</title>
       </Head>

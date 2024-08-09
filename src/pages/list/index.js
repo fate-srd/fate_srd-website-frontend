@@ -12,7 +12,6 @@ export default function IndexPage({ nodes }) {
         <title>Home • Fate SRD</title>
       </Head>
       <main className="main-content-wrapper" role="main">
-        {/* {console.log('nodes', nodes)} */}
         <h1 className="mb-10 text-6xl font-black">Latest Articles.</h1>
         <Link href="/node/3052">Node/3052</Link>
         {nodes?.length ? (
