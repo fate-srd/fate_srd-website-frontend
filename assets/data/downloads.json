@@ -118,5 +118,9 @@
   {
     "url": "https://evilhat.com/product/war-of-ashes-fate-of-agaptus/#downloads",
     "label": "War of Ashes Character Sheet"
+  },
+  {
+    "url": "https://github.com/kbaird/Fate-XSLT",
+    "label": "Fate-XSLT (DTDs & XSLT sheets for rendering characters for various derivatives of the Fate RPG)"
   }
 ]
