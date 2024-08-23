@@ -68,7 +68,7 @@ const Products = () => {
 
         {products && Object.entries(products).map(([key, values]) => (
           <div key={key}>
-          {key != "Publisher Name" || key != "" &&
+          {key != "Publisher Name" &&
             <>
               <h3>{key}</h3>
               <ul>
