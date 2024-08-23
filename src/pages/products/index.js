@@ -70,7 +70,6 @@ const Products = () => {
           <div key={key}>
           {key != "Publisher Name" &&
             <>
-            {console.log('key', key)}
               <h3>{key}</h3>
               <ul>
                 {values.map((value, index) => (
