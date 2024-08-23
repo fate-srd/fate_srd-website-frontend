@@ -68,12 +68,16 @@ const Products = () => {
 
         {products && Object.entries(products).map(([key, values]) => (
           <div key={key}>
-            <h3>{key}</h3>
-            <ul>
-              {values.map((value, index) => (
-                <li key={index}><a href={value.link}>{value.title}</a></li>
-              ))}
-            </ul>
+          {key != "Publisher Name" &&
+            <>
+              <h3>{key}</h3>
+              <ul>
+                {values.map((value, index) => (
+                  <li key={index}><a href={value.link}>{value.title}</a></li>
+                ))}
+              </ul> 
+            </>
+          }
           </div>
         ))}
       </main>
