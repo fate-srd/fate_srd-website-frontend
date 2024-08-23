@@ -1,7 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [process.env.NEXT_IMAGE_DOMAIN, 'i.ytimg.com', 'yt3.ggpht.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fatesrd.amazingrando.dev',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'yt3.ggpht.com',
+        port: '',
+      },
+    ],
   },
   async redirects() {
     return [
