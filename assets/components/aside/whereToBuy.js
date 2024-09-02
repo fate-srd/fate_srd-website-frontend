@@ -93,6 +93,11 @@ const WhereToBuy = ({ value }) => {
       dtr: 'https://www.drivethrurpg.com/product/266197/Fate-Space-Toolkit?affiliate_id=144937',
       itch: 'https://evilhat.itch.io/fate-space-toolkit',
     },
+    'venture-city': {
+      direct: 'https://evilhat.com/product/venture-city/',
+      dtr: 'https://www.drivethrurpg.com/en/product/127246/venture-city-a-superpunk-sourcebook-for-fate-core?affiliate_id=144937',
+      itch: 'https://evilhat.itch.io/venture-city-a-superpunk-sourcebook-for-fate-core',
+    },
   };
 
   if (books[book] == null) return false;
