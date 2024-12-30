@@ -20,6 +20,7 @@ const PatreonLogo = () => (
 
 const PatreonBar = () => {
   const [showBar, setshowBar] = useState(false);
+  const [patronStatus, setPatronStatus] = useState(null);
 
   const patreonBarCookieName = 'Patreon Bar';
 
@@ -32,8 +33,15 @@ const PatreonBar = () => {
     []
   );
 
+  const verifyPatronStatus = () => {
+    window.location.href = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=${process.env.NEXT_PUBLIC_PATREON_CLIENT_ID}&redirect_uri=${encodeURIComponent(window.location.origin + '/api/patreon-callback')}`;
+  };
+
   const setCookieHandler = () => {
-    cookies.set(patreonBarCookieName, true);
+    cookies.set(patreonBarCookieName, 'dismissed', {
+      path: '/',
+      maxAge: 60 * 60 * 24 * 30 // 30 days in seconds
+    });
   };
 
   const hideBar = () => {
@@ -46,7 +54,28 @@ const PatreonBar = () => {
     if (!cookieContent) {
       setshowBar(true);
     }
+
+    // Check URL parameters for verification status
+    const urlParams = new URLSearchParams(window.location.search);
+    const verified = urlParams.get('verified');
+    const error = urlParams.get('error');
+
+    if (verified === 'true') {
+      console.log('Successfully verified as an active Patreon member!');
+      setPatronStatus('active');
+    } else if (verified === 'false') {
+      console.log('Not an active Patreon member');
+      setPatronStatus('inactive');
+    } else if (error) {
+      console.log('Error verifying Patreon status');
+      setPatronStatus('error');
+    }
   }, [cookies]);
+
+  const handleCloseClick = () => {
+    verifyPatronStatus();
+    hideBar();
+  };
 
   return (
     <div>
@@ -63,9 +92,9 @@ const PatreonBar = () => {
             <button
               className="patreon-bar__close"
               type="button"
-              onClick={hideBar}
+              onClick={handleCloseClick}
             >
-              Close for 30 days
+              Remove
               <i className="fas fa-times patreon-bar__close__icon" />
             </button>
           </div>
