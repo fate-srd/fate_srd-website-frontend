@@ -1,0 +1,11 @@
+.date-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  gap: 0.25rem;
+}
+
+.date-icon {
+  position: relative;
+  top: 1px;
+}

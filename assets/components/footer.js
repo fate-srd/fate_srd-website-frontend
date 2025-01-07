@@ -1,9 +1,71 @@
 import Link from 'next/link';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faPatreon, faFacebook, faDiscord, faReddit } from '@fortawesome/free-brands-svg-icons';
+import { faShoppingCart } from '@fortawesome/pro-regular-svg-icons';
 import Image from 'next/image';
 import logo from '../images/logo.svg';
+
+// Data objects
+const socialLinks = [
+  { href: 'https://www.youtube.com/FateSRD', icon: faYoutube, text: 'YouTube' },
+  { href: 'https://www.patreon.com/fate_srd', icon: faPatreon, text: 'Patreon' },
+  { href: '/store', icon: faShoppingCart, text: 'Store', isInternal: true }
+];
+
+const siteLinks = [
+  { href: '/about-site', text: 'About This Site' },
+  { href: '/contact-us', text: 'Contact Us' },
+  { href: '/official-licensing-fate', text: 'Official Licensing' },
+  { href: '/privacy', text: 'Privacy Policy' }
+];
+
+const communityLinks = [
+  { href: 'https://discord.com/invite/CeXKx8NGYU', icon: faDiscord, text: 'Fate Tabletop RPGs' },
+  { href: 'https://www.reddit.com/r/FATErpg/', icon: faReddit, text: 'FATErpg Reddit' },
+  { href: 'https://www.facebook.com/groups/faterpg/', icon: faFacebook, text: 'Fate Core / Accelerated RPG' },
+  { href: 'https://www.facebook.com/groups/FateCom/', icon: faFacebook, text: 'Fate Community' }
+];
+
+// Components
+const FooterLink = ({ href, icon, text, isInternal }) => {
+  const LinkComponent = isInternal ? Link : 'a';
+  const linkProps = isInternal 
+    ? { href } 
+    : { href, target: "_blank", rel: "noreferrer" };
+
+  return (
+    <LinkComponent className="" {...linkProps}>
+      {icon && <FontAwesomeIcon icon={icon} />} {text}
+    </LinkComponent>
+  );
+};
+
+const FooterSection = ({ links }) => (
+  <ul className="!pl-0">
+    {links.map((link) => (
+      <li className="" key={link.text}>
+        <FooterLink {...link} />
+      </li>
+    ))}
+  </ul>
+);
+
+const CommunitySection = () => (
+  <ul className="">
+    <li className="">
+      Communities
+      <dl className="">
+        <dt>Discuss Fate Around the Web</dt>
+        {communityLinks.map((link) => (
+          <dd key={link.text}>
+            <FooterLink {...link} />
+          </dd>
+        ))}
+      </dl>
+    </li>
+  </ul>
+);
 
 const fateTranslations = {
   'Fate SRD in German': 'https://srd.faterpg.de/',
@@ -20,77 +82,27 @@ const fateTranslations = {
 };
 
 const Footer = () => (
-  <footer className="site-footer">
-    <div className="site-footer__content">
-      <div className="site-footer__logo-wrapper">
-        <Link href="/" className="site-footer__link">
-          <Image src={logo} alt="Fate SRD Logo" className="site-footer__logo" />
+  <footer className="bg-footer-bg relative text-white py-10 px-4">
+    <div className="max-w-[1279px] mx-auto">
+      <div className="">
+        <Link href="/" className="">
+          <Image src={logo} alt="Fate SRD Logo" className="" />
         </Link>
       </div>
 
-      <nav
-        className="site-footer__nav"
-        role="navigation"
-        aria-label="Footer Navigation"
-      >
-        <ul className="site-footer__ul">
-          <li className="site-footer__li">
-            <a
-              className="site-footer__link"
-              href="https://www.youtube.com/FateSRD"
-            >
-              <FontAwesomeIcon icon={faYoutube} /> YouTube
-            </a>
-          </li>
-          <li className="site-footer__li" style={{ marginBottom: '2rem' }}>
-            <a
-              className="site-footer__link"
-              href="https://www.patreon.com/fate_srd"
-            >
-              <FontAwesomeIcon icon={faPatreon} /> Patreon
-            </a>
-          </li>
-          <li className="site-footer__li">
-            <Link href="/about-site" className="site-footer__link">
-              About This Site
-            </Link>
-          </li>
-          <li className="site-footer__li">
-            <Link className="site-footer__link" href="/contact-us">
-              Contact Us
-            </Link>
-          </li>
-          <li className="site-footer__li">
-            <Link href="/official-licensing-fate" className="site-footer__link">
-              Official Licensing
-            </Link>
-          </li>
-          <li className="site-footer__li">
-            <Link href="/privacy" className="site-footer__link">
-              Privacy Policy
-            </Link>
-          </li>
-        </ul>
-
-        <ul className="site-footer__ul">
-          {Object.entries(fateTranslations).map(([key, value]) => (
-            <li className="site-footer__li" key={key}>
-              <a
-                href={value}
-                className="site-footer__link"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {key}
-              </a>
-            </li>
-          ))}
-        </ul>
+      <nav role="navigation" aria-label="Footer Navigation" className="flex flex-row gap-8">
+        <FooterSection links={socialLinks} />
+        <FooterSection links={siteLinks} />
+        <CommunitySection />
+        <FooterSection links={Object.entries(fateTranslations).map(([key, value]) => ({
+          href: value,
+          text: key
+        }))} />
       </nav>
 
-      <div className="site-footer__legal" aria-label="Legal Text">
-        <div className="content">
-          <p className="big">
+      <div className="" aria-label="Legal Text">
+        <div className="">
+          <p className="">
             Evil Hat Productions, creators of the Fate role-playing game system,
             officially endorses the Fate SRD website as the definitive source
             for all Fate System Reference Documents. This endorsement affirms
