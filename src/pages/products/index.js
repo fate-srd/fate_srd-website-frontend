@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 
 const Products = () => {
   const [products, setProducts] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
   async function fetchCsv() {
     const response = await fetch('data/fate-product-list.csv');
@@ -45,6 +46,24 @@ const Products = () => {
     return sortedProducts;
   }
 
+  const filteredProducts = () => {
+    if (!products || !searchTerm) return products;
+    
+    const filtered = Object.entries(products).reduce((acc, [publisher, items]) => {
+      const matchingItems = items.filter(item => 
+        (item?.title?.toLowerCase()?.includes(searchTerm.toLowerCase()) ||
+        publisher?.toLowerCase()?.includes(searchTerm.toLowerCase())) ?? false
+      );
+      
+      if (matchingItems.length > 0) {
+        acc[publisher] = matchingItems;
+      }
+      return acc;
+    }, {});
+
+    return filtered;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await sortProducts();
@@ -66,7 +85,21 @@ const Products = () => {
         </p>
         <p style={{marginBottom: '4rem'}}><a className="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScS3fgz0UWqSSlx7f0hkrtb_-y-HFOsD8bDx576aUkrdiZq5w/viewform">Add a game or product</a></p>
 
-        {products && Object.entries(products).map(([key, values]) => (
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            padding: '0.5rem',
+            marginBottom: '2rem',
+            width: '100%',
+            maxWidth: '400px',
+            fontSize: '1rem'
+          }}
+        />
+
+        {products && Object.entries(filteredProducts()).map(([key, values]) => (
           <div key={key}>
             {key != "Publisher Name" &&
               <>

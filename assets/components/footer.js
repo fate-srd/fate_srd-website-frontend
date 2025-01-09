@@ -83,14 +83,12 @@ const fateTranslations = {
 
 const Footer = () => (
   <footer className="bg-footer-bg relative text-white py-10 px-4">
-    <div className="max-w-[1279px] mx-auto">
-      <div className="">
-        <Link href="/" className="">
-          <Image src={logo} alt="Fate SRD Logo" className="" />
-        </Link>
-      </div>
+    <div className="max-w-7xl mx-auto">
+      <Link href="/" className="mb-10">
+        <Image src={logo} alt="Fate SRD Logo" className="" />
+      </Link>
 
-      <nav role="navigation" aria-label="Footer Navigation" className="flex flex-row gap-8">
+      <nav role="navigation" aria-label="Footer Navigation" className="flex flex-row gap-16">
         <FooterSection links={socialLinks} />
         <FooterSection links={siteLinks} />
         <CommunitySection />

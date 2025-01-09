@@ -31,7 +31,9 @@ export default function Post({ postData }) {
         <h1 className="page-title">{postData.title}</h1>
         
         <Date dateString={postData.date} />
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <article class="prose lg:prose-xl">
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </article>
       </main>
     </Layout>
   );

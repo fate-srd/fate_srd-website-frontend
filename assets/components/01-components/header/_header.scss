@@ -29,12 +29,6 @@
 }
 
 .site-header {
-  background: var(--color-blue-dark);
-
-  &__branding,
-  &__nav .nav-primary {
-    @include max-width;
-  }
 
   &__branding {
     padding: var(--s05) var(--s);
@@ -60,32 +54,6 @@
         display: none;
       }
     }
-  }
-
-  &__logo {
-    display: block;
-    width: 180px;
-    height: auto;
-
-    @include medium {
-      width: 250px;
-    }
-
-    @include large {
-      width: 250px;
-    }
-  }
-
-  &__official {
-    color: var(--color-white);
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  &__nav {
-    background: var(--color-blue-darker);
-    position: relative;
-    z-index: 100;
   }
 }
 

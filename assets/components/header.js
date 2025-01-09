@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBook,
-  faComments,
   faHeadSideHeadphones,
   faSearch,
   faSparkles,
@@ -12,7 +11,8 @@ import {
   faPlus,
   faMinus,
   faShoppingCart,
-  faPencil,
+  faArrowRight,
+  faPencil
 } from '@fortawesome/pro-regular-svg-icons';
 import Image from 'next/image';
 import logo from '../images/logo.svg';
@@ -59,23 +59,24 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="site-header">
-      <div className="site-header__branding">
+    <header className="site-header bg-blue-dark">
+      <div className="site-header__branding max-w-7xl mx-auto">
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <span className="site-header__official">The official</span>
+          <span className="text-white uppercase font-bold">The official</span>
           <Image
             src={logo}
             alt="Fate SRD Logo"
-            className="site-header__logo"
+            className="block w-[180px] h-auto md:w-[250px]"
           />
         </Link>
         <div className="site-header__branding__menu-toggle">
           <FontAwesomeIcon icon={faBars} className="bars" />
         </div>
       </div>
-      <div className="site-header__nav">
+
+      <div className="bg-blue-darker relative z-100">
         <nav
-          className="nav-primary"
+          className="nav-primary max-w-7xl mx-auto"
           role="navigation"
           aria-label="Primary Navigation"
         >
@@ -85,7 +86,6 @@ const Header = () => {
               <Image
                 src={logo}
                 alt="Fate SRD Logo"
-                className="site-header__logo"
               />
             </div>
             <div className="site-header__branding__menu-toggle">
@@ -93,6 +93,15 @@ const Header = () => {
             </div>
           </div>
           <ul className="nav-primary__ul">
+            <li className="nav-primary__li">
+              <Link href="/articles" className="nav-primary__link">
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  className="nav-primary__link-icon"
+                />
+                Learn Fate
+              </Link>
+            </li>
             <li
               className="nav-primary__li has-nav-flyout nav-primary__sub"
               id="flyout-rules"
@@ -249,42 +258,14 @@ const Header = () => {
                 </dl>
               </div>
             </li>
-            <li
-              className="nav-primary__li has-nav-flyout nav-primary__sub"
-              id="flyout-extras"
-            >
-              <button
-                type="button"
-                className="nav-primary__link nav-primary__toggle"
-                data-target="flyout-extras"
-              >
+            <li className="nav-primary__li">
+              <Link href="/products" className="nav-primary__link">
                 <FontAwesomeIcon
                   icon={faSparkles}
                   className="nav-primary__link-icon"
                 />
-                <span className="nav-primary__rules-wrapper">
-                  Extras
-                  <FontAwesomeIcon
-                    icon={faPlus}
-                    className="nav-primary__sub__mobile-toggle plus"
-                  />
-                  <FontAwesomeIcon
-                    icon={faMinus}
-                    className="nav-primary__sub__mobile-toggle minus"
-                  />
-                </span>
-              </button>
-              <div className="nav-flyout nav-flyout--simple">
-                <dl className="nav-flyout__region nav-flyout__region--simple">
-                  <dt>More Fate Stuff for You</dt>
-                  <dd>
-                    <Link href="/products">Games &amp; Products</Link>
-                  </dd>
-                  <dd>
-                    <Link href="/downloads">Downloads</Link>
-                  </dd>
-                </dl>
-              </div>
+                Products
+              </Link>
             </li>
 
             <li className="nav-primary__li">
