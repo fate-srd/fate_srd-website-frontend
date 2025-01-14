@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { Layout } from '../../../assets/components/layout';
 import ennies from '../../../assets/images/ennies-2014-silver.jpg';
+import { Button } from "@/components/ui/button"
 
 const Page = () => (
   <Layout>
@@ -10,6 +11,7 @@ const Page = () => (
     </Head>
     <main className="main-content-wrapper">
       <h1 className="page-title">About the Site</h1>
+      <Button>Click me</Button>
 
       <p>
         The Fate Roleplaying Game System Reference Document (SRD) is intended to

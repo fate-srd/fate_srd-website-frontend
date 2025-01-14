@@ -1,4 +1,4 @@
-import '../../assets/components/style.scss';
+import '../../assets/components/global.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';

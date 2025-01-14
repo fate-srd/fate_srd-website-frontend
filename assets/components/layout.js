@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import Header from './header';
 import Footer from './footer';
 import Head from 'next/head';
-
+import Header from '@/components/layout/header';
 export function Layout({ children, aside }) {
   return (
     <div className="page-wrapper">
