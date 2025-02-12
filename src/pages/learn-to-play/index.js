@@ -14,6 +14,18 @@ const LearnToPlay = ({ data }) => {
     return formattedDate;
   };
 
+  const vimeoVideo = {
+    id: {
+      kind: 'vimeo#video',
+      videoId: '747298589'
+    },
+    snippet: {
+      title: 'The Chase Scene from Indiana Jones 3 as a Contest • Fate SRD Movie Breakdown',
+      publishedAt: '2022-09-07T00:00:00Z',
+      thumbnailUrl: movieBreakdown
+    }
+  };
+
   return (
     <Layout>
       <Head>
@@ -28,42 +40,36 @@ const LearnToPlay = ({ data }) => {
         <br />
 
         <ul className="ap-card__ul">
-          <li>
-            <a href="https://vimeo.com/manage/videos/747298589">
-              <Image
-                className="ap-card__img"
-                src={movieBreakdown}
-                alt="The Chase Scene from Indiana Jones 3 as a Contest • Fate SRD Movie Breakdown"
-              />
-            </a>
-            <h3 className="ap-card__title">
-              <a href="https://vimeo.com/manage/videos/747298589">
-                The Chase Scene from Indiana Jones 3 as a Contest • Fate SRD
-                Movie Breakdown
-              </a>
-            </h3>
-            <p className="small">September 07, 2022</p>
-          </li>
-          {data.items
-            .filter((item) => item.id.kind === 'youtube#video')
+          {[vimeoVideo, ...data.items]
+            .filter((item) => item.id.kind === 'youtube#video' || item.id.kind === 'vimeo#video')
+            .sort((a, b) => new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt))
             .map((item) => (
               <li key={item.id.videoId} className="ap-card__card">
-                <a href={`https://www.youtube.com/watch?v=${item.id.videoId}`}>
+                <a href={item.id.kind === 'vimeo#video' 
+                  ? `https://vimeo.com/manage/videos/${item.id.videoId}`
+                  : `https://www.youtube.com/watch?v=${item.id.videoId}`}>
                   <Image
                     className="ap-card__img"
-                    src={`https://i.ytimg.com/vi/${item.id.videoId}/maxresdefault.jpg`}
+                    src={item.id.kind === 'vimeo#video'
+                      ? item.snippet.thumbnailUrl
+                      : `https://i.ytimg.com/vi/${item.id.videoId}/maxresdefault.jpg`}
                     width="480"
                     height="360"
                     alt={item.snippet.title}
                   />
                 </a>
                 <h3 className="ap-card__title">
-                  <a
-                    href={`https://www.youtube.com/watch?v=${item.id.videoId}`}
-                  >
-                    {item.snippet.title}
+                  <a href={item.id.kind === 'vimeo#video'
+                    ? `https://vimeo.com/manage/videos/${item.id.videoId}`
+                    : `https://www.youtube.com/watch?v=${item.id.videoId}`}>
+                    {item.snippet.title.split('—')[0]}
                   </a>
                 </h3>
+                {item.snippet.title.includes('—') && (
+                  <h4 className="ap-card__subtitle">
+                    {item.snippet.title.split('—')[1]}
+                  </h4>
+                )}
                 <p className="small">{formatDate(item.snippet.publishedAt)}</p>
               </li>
             ))}

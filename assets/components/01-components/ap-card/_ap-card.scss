@@ -19,6 +19,19 @@
   &__title {
     margin-top: var(--s05);
     margin-bottom: var(--s05);
+    text-wrap: balance;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__subtitle {
+    color: var(--color-gray-dark);
+    font-size: var(--font-size);
+    text-wrap: balance;
+    margin-top: var(--s05);
+    margin-bottom: var(--s05);
 
     a {
       text-decoration: none;
