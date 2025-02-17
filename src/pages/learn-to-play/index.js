@@ -52,7 +52,7 @@ const LearnToPlay = ({ data }) => {
                     className="ap-card__img"
                     src={item.id.kind === 'vimeo#video'
                       ? item.snippet.thumbnailUrl
-                      : `https://i.ytimg.com/vi/${item.id.videoId}/maxresdefault.jpg`}
+                      : `https://i.ytimg.com/vi/${item.id.videoId}/mqdefault.jpg`}
                     width="480"
                     height="360"
                     alt={item.snippet.title}
@@ -82,14 +82,36 @@ const LearnToPlay = ({ data }) => {
 export async function getStaticProps() {
   const YOUTUBE_HOST = 'https://youtube.googleapis.com';
   const channelId = 'UCQSvVIzeYCcGIbyD4pTsAEQ';
+  const playlistId = 'PL4LaEmSuKmKAbFGQkarkAfbcjd_XgKPAS';
 
-  const res = await fetch(
-    `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`
-  );
-  const data = await res.json();
+  const [channelRes, playlistRes] = await Promise.all([
+    fetch(
+      `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`
+    ),
+    fetch(
+      `${YOUTUBE_HOST}/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${process.env.YOUTUBE_API_KEY}`
+    )
+  ]);
+
+  const [channelData, playlistData] = await Promise.all([
+    channelRes.json(),
+    playlistRes.json()
+  ]);
+
+  // Transform playlist items to match channel items structure
+  const playlistItems = playlistData.items.map(item => ({
+    id: { kind: 'youtube#video', videoId: item.snippet.resourceId.videoId },
+    snippet: item.snippet
+  }));
+
+  // Combine both sets of videos
+  const combinedData = {
+    items: [...channelData.items, ...playlistItems]
+  };
+
   return {
     props: {
-      data,
+      data: combinedData,
     },
   };
 }
