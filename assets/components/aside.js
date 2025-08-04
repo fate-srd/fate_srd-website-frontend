@@ -30,19 +30,18 @@ const Aside = ({ ruleBook }) => {
       <div className="nav-in-page__content">
         <Menu value={ruleBook} />
         <div className="nav-in-page__about">
-          {ruleBook !== 'Odds and Ends' ||
-            (ruleBook !== 'Fate Codex' && (
-              <Image
-                className="nav-in-page__about__image"
-                src={`/../images/covers/menu-${ruleBook
-                  .toLowerCase()
-                  .split(' ')
-                  .join('-')}.jpg`}
-                alt={`${ruleBook} Cover`}
-                width="200"
-                height="400"
-              />
-            ))}
+          {ruleBook !== 'Odds and Ends' && ruleBook !== 'Fate Codex' && (
+            <Image
+              className="nav-in-page__about__image"
+              src={`/images/covers/menu-${ruleBook
+                .toLowerCase()
+                .split(' ')
+                .join('-')}.jpg`}
+              alt={`${ruleBook} Cover`}
+              width="200"
+              height="400"
+            />
+          )}
 
           <WhereToBuy value={ruleBook} />
           {/* 
