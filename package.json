@@ -10,7 +10,8 @@
     "lint:next": "next lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "postinstall": "./scripts/postInstall.sh"
+    "postinstall": "./scripts/postInstall.sh",
+    "generate:menus": "node scripts/generate-static-menus.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",

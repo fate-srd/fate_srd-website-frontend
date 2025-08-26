@@ -222,7 +222,7 @@ export default function IndexPage() {
             <h2>Toolkit SRDs</h2>
             <ul className="core-rules-list core-rules-list--3up">
               {toolkits.map((v) => (
-                <li className="core-rules-list__item" key={v.key}>
+                <li className="core-rules-list__item" key={v.url}>
                   <Link href={v.url} aria-label={`Read ${v.title}`}>
                     <div className="core-rules-list__item__content">
                       <Image
@@ -251,7 +251,7 @@ export default function IndexPage() {
             <h2>Fate World Book SRDs</h2>
             <ul className="core-rules-list core-rules-list--2up">
               {fatebooks.map((v) => (
-                <li className="core-rules-list__item" key={v.key}>
+                <li className="core-rules-list__item" key={v.url}>
                   <Link href={v.url} aria-label={`Read ${v.title}`}>
                     <div className="core-rules-list__item__content">
                       <Image
@@ -280,7 +280,7 @@ export default function IndexPage() {
             <h2>Worlds of Adventure SRDs</h2>
             <ul className="core-rules-list core-rules-list--2up">
               {woa.map((v) => (
-                <li className="core-rules-list__item" key={v.key}>
+                <li className="core-rules-list__item" key={v.url}>
                   <Link href={v.url} aria-label={`Read ${v.title}`}>
                     <div className="core-rules-list__item__content">
                       <Image

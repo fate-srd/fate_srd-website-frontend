@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/pro-solid-svg-icons';
 import { useRouter } from 'next/router';
-import { drupal } from '../../lib/drupal';
+import { getStaticMenuByValue } from '../../lib/static-menus';
 
 const classBase = 'nav-in-page';
 
@@ -61,35 +61,9 @@ const Menu = ({ value }) => {
   }, [currentPathname, query]);
 
   useEffect(() => {
-    const menuMachineName = () => {
-      let convertedValue = '';
-      if (value === 'Odds and Ends') {
-        convertedValue = 'Odds Ends';
-      } else {
-        convertedValue = value;
-      }
-      const tranformedValue = convertedValue.toLowerCase().split(' ').join('-');
-      let menuName = '';
-      if (
-        tranformedValue === 'fate-horror-toolkit' ||
-        tranformedValue === 'fate-accessibility-toolkit' ||
-        tranformedValue === 'fate-space-toolkit'
-      ) {
-        menuName = tranformedValue;
-      } else {
-        menuName = `menu-${tranformedValue}`;
-      }
-      return menuName;
-    };
-
-    async function getMenus() {
-      const menuName = menuMachineName();
-      const { tree } = await drupal.getMenu(menuName);
-      setMenuTree(tree);
-    }
-
-    getMenus();
-  }, [value, query]);
+    const tree = getStaticMenuByValue(value);
+    setMenuTree(tree);
+  }, [value]);
 
   function buildMenu(menuArray) {
     if (!menuArray) {
