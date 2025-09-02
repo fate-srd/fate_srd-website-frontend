@@ -1,3 +1,19 @@
 table {
   margin-bottom: var(--s);
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+table tbody tr td,
+table thead tr th {
+  padding: var(--s025) var(--s);
+  border-bottom: 2px solid var(--color-gray-medium);
+}
+
+table.skill-list {
+  width: 100%;
+}
+
+table.skill-list tr td:not(:first-child) {
+  text-align: center;
 }
