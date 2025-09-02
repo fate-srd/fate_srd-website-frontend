@@ -3,9 +3,33 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DrupalClient } from 'next-drupal';
 
+// Load environment variables from .env file
+import { config } from 'dotenv';
+config();
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
+
+async function loadEnvFile() {
+  const envPath = path.join(projectRoot, '.env');
+  try {
+    const envContent = await fs.readFile(envPath, 'utf8');
+    const lines = envContent.split('\n');
+    for (const line of lines) {
+      const trimmedLine = line.trim();
+      if (trimmedLine && !trimmedLine.startsWith('#')) {
+        const [key, ...valueParts] = trimmedLine.split('=');
+        if (key && valueParts.length > 0) {
+          const value = valueParts.join('=');
+          process.env[key] = value;
+        }
+      }
+    }
+  } catch (error) {
+    console.warn('Warning: Could not load .env file:', error.message);
+  }
+}
 
 function toMenuMachineName(value) {
   const convertedValue = value === 'Odds and Ends' ? 'Odds Ends' : value;
@@ -127,6 +151,7 @@ async function writeStaticMenusFile(menus) {
 }
 
 async function main() {
+  await loadEnvFile(); // Load environment variables first
   const titles = await findRuleBookTitles();
   const menus = await fetchMenus(titles);
   await writeStaticMenusFile(menus);
