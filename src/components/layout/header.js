@@ -24,11 +24,11 @@ const Header = ({ className }) => {
           <SheetContent side="left">
             <SheetHeader>
               <SheetTitle>The Official Fate SRD</SheetTitle>
-              <SheetDescription>
-                <ul>
-                  <li>
-                    <Link href="/"><FontAwesomeIcon
-                  icon={faBook}
+              <SheetDescription> 
+                 <ul>
+                  <li>  
+                     <Link href="/"><FontAwesomeIcon 
+                  icon={faBook}  
                   className="nav-primary__link-icon"
                 />Rules</Link>
                   </li>
