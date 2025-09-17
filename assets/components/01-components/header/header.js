@@ -1,7 +1,7 @@
 Drupal.behaviors.headerMenu = {
   attach(context) {
     const mobileToggle = context.querySelector(
-      '.site-header__branding__menu-toggle'
+      '.site-header__branding__menu-toggle',
     );
     const mainMenu = context.querySelector('.nav-primary');
     const body = context.querySelector('body');

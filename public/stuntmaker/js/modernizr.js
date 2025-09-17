@@ -168,7 +168,7 @@ window.Modernizr = (function (window, document, undefined) {
             ? getComputedStyle(node, null)
             : node.currentStyle
           ).position == 'absolute';
-      }
+      },
     );
 
     return bool;
@@ -375,7 +375,7 @@ window.Modernizr = (function (window, document, undefined) {
   function testPropsAll(prop, prefixed, elem) {
     const ucProp = prop.charAt(0).toUpperCase() + prop.slice(1);
     let props = `${prop} ${cssomPrefixes.join(`${ucProp} `)}${ucProp}`.split(
-      ' '
+      ' ',
     );
 
     // did they call .prefixed('boxSizing') or are we just testing a prop?
@@ -466,7 +466,7 @@ window.Modernizr = (function (window, document, undefined) {
         ].join(''),
         (node) => {
           bool = node.offsetTop === 9;
-        }
+        },
       );
     }
 
@@ -642,7 +642,7 @@ window.Modernizr = (function (window, document, undefined) {
         '-webkit- '.split(' ').join(str2 + str1) +
         // standard syntax             // trailing 'background-image:'
         prefixes.join(str3 + str1)
-      ).slice(0, -str1.length)
+      ).slice(0, -str1.length),
     );
 
     return contains(mStyle.backgroundImage, 'gradient');
@@ -670,7 +670,7 @@ window.Modernizr = (function (window, document, undefined) {
         '@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}',
         (node, rule) => {
           ret = node.offsetLeft === 9 && node.offsetHeight === 3;
-        }
+        },
       );
     }
     return ret;
@@ -703,7 +703,7 @@ window.Modernizr = (function (window, document, undefined) {
 
         bool =
           /src/i.test(cssText) && cssText.indexOf(rule.split(' ')[0]) === 0;
-      }
+      },
     );
 
     return bool;
@@ -726,7 +726,7 @@ window.Modernizr = (function (window, document, undefined) {
       ].join(''),
       (node) => {
         bool = node.offsetHeight >= 3;
-      }
+      },
     );
 
     return bool;
@@ -865,7 +865,7 @@ window.Modernizr = (function (window, document, undefined) {
     return (
       !!document.createElementNS &&
       /SVGAnimate/.test(
-        toString.call(document.createElementNS(ns.svg, 'animate'))
+        toString.call(document.createElementNS(ns.svg, 'animate')),
       )
     );
   };
@@ -879,7 +879,7 @@ window.Modernizr = (function (window, document, undefined) {
     return (
       !!document.createElementNS &&
       /SVGClipPath/.test(
-        toString.call(document.createElementNS(ns.svg, 'clipPath'))
+        toString.call(document.createElementNS(ns.svg, 'clipPath')),
       )
     );
   };
@@ -913,8 +913,8 @@ window.Modernizr = (function (window, document, undefined) {
       return attrs;
     })(
       'autocomplete autofocus list placeholder max min multiple pattern required step'.split(
-        ' '
-      )
+        ' ',
+      ),
     );
     /* >>input */
 
@@ -978,8 +978,8 @@ window.Modernizr = (function (window, document, undefined) {
       return inputs;
     })(
       'search tel url email datetime date month week time datetime-local number range color'.split(
-        ' '
-      )
+        ' ',
+      ),
     );
     /* >>inputtypes */
   }
@@ -1254,7 +1254,7 @@ window.Modernizr = (function (window, document, undefined) {
                 data.frag.createElement(nodeName);
                 return `c("${nodeName}")`;
               })
-          });return n}`
+          });return n}`,
       )(html5, data.frag);
     }
 
@@ -1280,7 +1280,7 @@ window.Modernizr = (function (window, document, undefined) {
             // adds styling not present in IE6/7/8/9
             'mark{background:#FF0;color:#000}' +
             // hides non-rendered elements
-            'template{display:none}'
+            'template{display:none}',
         );
       }
       if (!supportsUnknownElements) {

@@ -22,7 +22,7 @@ export async function getStaticProps(context) {
         'filter[status]': 1,
         include: 'title,field_tags,uid',
       },
-    }
+    },
   );
 
   return {

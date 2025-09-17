@@ -39,7 +39,7 @@ export async function getStaticProps(context) {
         'fields[node--article]':
           'title,path,field_image,uid,created,drupal_internal__nid',
       },
-    }
+    },
   );
 
   return {

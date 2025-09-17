@@ -76,7 +76,7 @@ const Menu = ({ value }) => {
         const inActivePath = () => {
           if (typeof item?.items !== 'undefined') {
             return Object.values(item?.items).some(
-              (v) => v?.url === currentPathname
+              (v) => v?.url === currentPathname,
             );
           }
           return false;
