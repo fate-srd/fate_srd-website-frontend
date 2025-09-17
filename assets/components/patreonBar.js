@@ -29,7 +29,7 @@ const PatreonBar = () => {
         path: '/',
         maxAge: 60 * 60 * 24 * 30, // second * minutes * hours * days
       }),
-    []
+    [],
   );
 
   const setCookieHandler = () => {

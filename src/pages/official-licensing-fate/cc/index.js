@@ -33,8 +33,10 @@ const Page = () => (
       <p>
         Our advice: This is the easiest option to implement and understand. For
         each SRD you use, you must include a small attribution bloc on your
-        copyright page. The attribution bloc is given at the top of each SRD file you download, so it’s an easy copy &amp; paste. It lays no claim to your work, and you’re not obligated to make your derived work open as well, it just requires
-        you to give credit as specified.
+        copyright page. The attribution bloc is given at the top of each SRD
+        file you download, so it’s an easy copy &amp; paste. It lays no claim to
+        your work, and you’re not obligated to make your derived work open as
+        well, it just requires you to give credit as specified.
       </p>
       <h2>A GUIDE TO USING THE FATE SRDS WITH CREATIVE COMMONS</h2>
       <p>

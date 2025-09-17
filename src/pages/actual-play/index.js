@@ -46,7 +46,7 @@ export async function getStaticProps(context) {
         'filter[status]': 1,
         sort: 'title',
       },
-    }
+    },
   );
 
   return {

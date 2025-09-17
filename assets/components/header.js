@@ -26,7 +26,7 @@ class Header extends React.Component {
   componentDidMount() {
     const context = document;
     const mobileToggles = context.querySelectorAll(
-      '.site-header__branding__menu-toggle'
+      '.site-header__branding__menu-toggle',
     );
     const mainMenu = context.querySelector('.nav-primary');
     const rulesToggle = context.querySelectorAll('.nav-primary__toggle');
@@ -43,10 +43,10 @@ class Header extends React.Component {
     }
 
     mobileToggles.forEach((toggle) =>
-      toggle.addEventListener('click', handleMainMenu)
+      toggle.addEventListener('click', handleMainMenu),
     );
     rulesToggle.forEach((toggle) =>
-      toggle.addEventListener('click', handleRulesToggle)
+      toggle.addEventListener('click', handleRulesToggle),
     );
   }
 
@@ -151,9 +151,7 @@ class Header extends React.Component {
                       </Link>
                     </dd>
                     <dd>
-                      <Link href="/fate-space-toolkit">
-                        Fate Space Toolkit
-                      </Link>
+                      <Link href="/fate-space-toolkit">Fate Space Toolkit</Link>
                     </dd>
                   </dl>
 

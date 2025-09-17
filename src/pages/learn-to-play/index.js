@@ -17,13 +17,14 @@ const LearnToPlay = ({ data }) => {
   const vimeoVideo = {
     id: {
       kind: 'vimeo#video',
-      videoId: '747298589'
+      videoId: '747298589',
     },
     snippet: {
-      title: 'The Chase Scene from Indiana Jones 3 as a Contest • Fate SRD Movie Breakdown',
+      title:
+        'The Chase Scene from Indiana Jones 3 as a Contest • Fate SRD Movie Breakdown',
       publishedAt: '2022-09-07T00:00:00Z',
-      thumbnailUrl: movieBreakdown
-    }
+      thumbnailUrl: movieBreakdown,
+    },
   };
 
   return (
@@ -41,27 +42,45 @@ const LearnToPlay = ({ data }) => {
 
         <ul className="ap-card__ul">
           {[vimeoVideo, ...data.items]
-            .filter((item) => item.id.kind === 'youtube#video' || item.id.kind === 'vimeo#video')
-            .sort((a, b) => new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt))
+            .filter(
+              (item) =>
+                item.id.kind === 'youtube#video' ||
+                item.id.kind === 'vimeo#video',
+            )
+            .sort(
+              (a, b) =>
+                new Date(b.snippet.publishedAt) -
+                new Date(a.snippet.publishedAt),
+            )
             .map((item) => (
               <li key={item.id.videoId} className="ap-card__card">
-                <a href={item.id.kind === 'vimeo#video' 
-                  ? `https://vimeo.com/manage/videos/${item.id.videoId}`
-                  : `https://www.youtube.com/watch?v=${item.id.videoId}`}>
+                <a
+                  href={
+                    item.id.kind === 'vimeo#video'
+                      ? `https://vimeo.com/manage/videos/${item.id.videoId}`
+                      : `https://www.youtube.com/watch?v=${item.id.videoId}`
+                  }
+                >
                   <Image
                     className="ap-card__img"
-                    src={item.id.kind === 'vimeo#video'
-                      ? item.snippet.thumbnailUrl
-                      : `https://i.ytimg.com/vi/${item.id.videoId}/mqdefault.jpg`}
+                    src={
+                      item.id.kind === 'vimeo#video'
+                        ? item.snippet.thumbnailUrl
+                        : `https://i.ytimg.com/vi/${item.id.videoId}/mqdefault.jpg`
+                    }
                     width="480"
                     height="360"
                     alt={item.snippet.title}
                   />
                 </a>
                 <h3 className="ap-card__title">
-                  <a href={item.id.kind === 'vimeo#video'
-                    ? `https://vimeo.com/manage/videos/${item.id.videoId}`
-                    : `https://www.youtube.com/watch?v=${item.id.videoId}`}>
+                  <a
+                    href={
+                      item.id.kind === 'vimeo#video'
+                        ? `https://vimeo.com/manage/videos/${item.id.videoId}`
+                        : `https://www.youtube.com/watch?v=${item.id.videoId}`
+                    }
+                  >
                     {item.snippet.title.split('—')[0]}
                   </a>
                 </h3>
@@ -86,27 +105,27 @@ export async function getStaticProps() {
 
   const [channelRes, playlistRes] = await Promise.all([
     fetch(
-      `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`
+      `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`,
     ),
     fetch(
-      `${YOUTUBE_HOST}/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${process.env.YOUTUBE_API_KEY}`
-    )
+      `${YOUTUBE_HOST}/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${process.env.YOUTUBE_API_KEY}`,
+    ),
   ]);
 
   const [channelData, playlistData] = await Promise.all([
     channelRes.json(),
-    playlistRes.json()
+    playlistRes.json(),
   ]);
 
   // Transform playlist items to match channel items structure
-  const playlistItems = playlistData.items.map(item => ({
+  const playlistItems = playlistData.items.map((item) => ({
     id: { kind: 'youtube#video', videoId: item.snippet.resourceId.videoId },
-    snippet: item.snippet
+    snippet: item.snippet,
   }));
 
   // Combine both sets of videos
   const combinedData = {
-    items: [...channelData.items, ...playlistItems]
+    items: [...channelData.items, ...playlistItems],
   };
 
   return {
