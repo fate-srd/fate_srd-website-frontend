@@ -113,7 +113,10 @@ export default function IndexPage() {
     <Layout>
       <Head>
         <title>Fate SRD</title>
-        <meta property="og:image" content="https://fate-srd.com/images/sharing.png" />
+        <meta
+          property="og:image"
+          content="https://fate-srd.com/images/sharing.png"
+        />
         <meta property="og:title" content="The official Fate SRD" />
       </Head>
       <main

@@ -9,7 +9,7 @@ export async function middleware(request) {
       `https://fatesrd.amazingrando.dev/jsonapi/node/article?filter%5Bdrupal_internal__nid%5D=${splitPath[2]}`,
       {
         method: 'GET',
-      }
+      },
     );
     const data = await nodeData.json();
     return data;

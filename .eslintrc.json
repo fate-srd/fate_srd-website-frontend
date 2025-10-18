@@ -2,5 +2,11 @@
   "extends": [
     "wesbos",
     "next/core-web-vitals"
-  ]
+  ],
+  "rules": {
+    "react/no-danger": "off"
+  },
+  "globals": {
+    "Drupal": "readonly"
+  }
 }

@@ -10,7 +10,7 @@ export default function NodePage({ resource, ruleBook }) {
 
   useEffect(() => {
     const headers = document.querySelectorAll(
-      '.main-content-wrapper h2, .main-content-wrapper h3, .main-content-wrapper h4'
+      '.main-content-wrapper h2, .main-content-wrapper h3, .main-content-wrapper h4',
     );
 
     const processAnchorLinks = (header) => {
@@ -109,7 +109,7 @@ export async function getStaticPaths(context) {
   return {
     paths: await drupal.getStaticPathsFromContext(
       ['node--article', 'pages'],
-      context
+      context,
     ),
     fallback: 'blocking',
   };
@@ -159,7 +159,7 @@ export async function getStaticProps(context) {
       params: {
         'filter[id]': resource?.field_tags ? resource.field_tags[0].id : null,
       },
-    }
+    },
   );
 
   return {
