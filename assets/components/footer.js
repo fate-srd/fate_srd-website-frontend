@@ -11,8 +11,7 @@ const fateTranslations = {
   'Fate SRD in French': 'https://fate-srd.fr/',
   'Fate SRD in Brazilian Portuguese':
     'https://fatesrdbrasil.gitlab.io/fate-srd-brasil/',
-  'Fate SRD in Korean 1': 'https://sites.google.com/site/fatecorekr/home',
-  'Fate SRD in Korean 2':
+  'Fate SRD in Korean':
     'https://ko.trpgkr.wikidok.net/wp-d/5d1db45ca4a7f1be66b95a44/View',
   'Fate SRD in Japanese': 'https://w.atwiki.jp/fatesrdj/',
   'Fate SRD in Chinese': 'https://www.sites.google.com/site/faterpg/fate',
