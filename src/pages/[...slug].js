@@ -107,10 +107,7 @@ export default function NodePage({ resource, ruleBook }) {
 
 export async function getStaticPaths(context) {
   return {
-    paths: await drupal.getStaticPathsFromContext(
-      ['node--article', 'pages'],
-      context,
-    ),
+    paths: await drupal.getStaticPathsFromContext(['node--article'], context),
     fallback: 'blocking',
   };
 }
