@@ -25,8 +25,12 @@ const ActualPlay = ({ actualPlayData }) => (
       <ul>
         {actualPlayData.map((item) => (
           <li key={item.title}>
-            <a href={item.field_link.uri}>{item.title}</a> by{' '}
-            <em>{item.field_authoring_entity}</em>.
+            <a href={item.field_link.uri}>{item.title}</a>
+            {item.field_authoring_entity && (
+              <>
+                by <em>{item.field_authoring_entity}</em>
+              </>
+            )}
           </li>
         ))}
       </ul>
