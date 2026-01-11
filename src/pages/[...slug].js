@@ -4,6 +4,7 @@ import { drupal } from '../../lib/drupal';
 import { Layout } from '../../assets/components/layout';
 import linkIcon from '../../assets/images/icons/link-solid.svg';
 import Aside from '../../assets/components/aside';
+import { Body } from '../../assets/components/body';
 
 export default function NodePage({ resource, ruleBook }) {
   const [toc, setToc] = useState([{}]);
@@ -91,7 +92,7 @@ export default function NodePage({ resource, ruleBook }) {
           </div>
         )}
 
-        <div dangerouslySetInnerHTML={{ __html: pageContent }} />
+        <Body value={pageContent} />
       </main>
       {resource.type !== 'pages' && (
         <aside className="aside-wrapper">
