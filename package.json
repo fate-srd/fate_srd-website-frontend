@@ -29,6 +29,7 @@
     "eslint-config-wesbos": "^4.3.2",
     "fate-product-list": "github:fate-srd/fate-product-list#8.0.0",
     "fathom-client": "^3.7.2",
+    "html-react-parser": "^5.2.11",
     "next": "16.0.7",
     "next-drupal": "^2.0.0",
     "next-sitemap": "^4.2.3",
