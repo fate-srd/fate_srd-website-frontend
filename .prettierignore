@@ -1,0 +1,9 @@
+.next
+out
+build
+coverage
+playwright-report
+test-results
+package-lock.json
+public/sitemap-0.xml
+lib/static-menus.js

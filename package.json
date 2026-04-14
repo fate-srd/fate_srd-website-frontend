@@ -10,7 +10,15 @@
     "lint:next": "next lint",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "format": "prettier \"**/*.{js,json,md,yml,yaml}\" --write",
+    "format:check": "prettier \"**/*.{js,json,md,yml,yaml}\" --check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:smoke": "playwright test",
     "generate:menus": "node scripts/generate-static-menus.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
@@ -46,10 +54,16 @@
   "devDependencies": {
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
+    "@playwright/test": "^1.55.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
     "autoprefixer": "^10",
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.7",
+    "jsdom": "^26.1.0",
     "postcss": "^8",
-    "tailwindcss": "^3"
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3",
+    "vitest": "^3.2.4"
   }
 }
