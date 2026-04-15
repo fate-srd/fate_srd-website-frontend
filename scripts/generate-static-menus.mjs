@@ -110,7 +110,6 @@ async function fetchMenus(titles) {
         // try next candidate
       }
     }
-    // eslint-disable-next-line no-console
     console.warn('Warning: Could not discover menus via JSON:API. Falling back to titles-derived menus.');
     return [];
   }
@@ -128,7 +127,7 @@ async function fetchMenus(titles) {
     } catch (err) {
       // If a menu doesn't exist, keep it as empty
       results[machine] = {};
-      // eslint-disable-next-line no-console
+
       console.warn(`Warning: failed to fetch menu "${machine}":`, err.message || err);
     }
   }
@@ -155,12 +154,12 @@ async function main() {
   const titles = await findRuleBookTitles();
   const menus = await fetchMenus(titles);
   await writeStaticMenusFile(menus);
-  // eslint-disable-next-line no-console
+
   console.log(`Wrote ${Object.keys(menus).length} menus to lib/static-menus.js`);
 }
 
 main().catch((err) => {
-  // eslint-disable-next-line no-console
+
   console.error(err);
   process.exit(1);
 });
