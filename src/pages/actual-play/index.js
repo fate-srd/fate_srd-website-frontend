@@ -28,7 +28,7 @@ const ActualPlay = ({ actualPlayData }) => (
             <a href={item.field_link.uri}>{item.title}</a>
             {item.field_authoring_entity && (
               <>
-                {" "}
+                {' '}
                 by <em>{item.field_authoring_entity}</em>
               </>
             )}

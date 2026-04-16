@@ -103,36 +103,47 @@ export async function getStaticProps() {
   const channelId = 'UCQSvVIzeYCcGIbyD4pTsAEQ';
   const playlistId = 'PL4LaEmSuKmKAbFGQkarkAfbcjd_XgKPAS';
 
-  const [channelRes, playlistRes] = await Promise.all([
-    fetch(
-      `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`,
-    ),
-    fetch(
-      `${YOUTUBE_HOST}/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${process.env.YOUTUBE_API_KEY}`,
-    ),
-  ]);
+  try {
+    const [channelRes, playlistRes] = await Promise.all([
+      fetch(
+        `${YOUTUBE_HOST}/youtube/v3/search?order=date&part=snippet&channelId=${channelId}&maxResults=50&key=${process.env.YOUTUBE_API_KEY}`,
+      ),
+      fetch(
+        `${YOUTUBE_HOST}/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${process.env.YOUTUBE_API_KEY}`,
+      ),
+    ]);
 
-  const [channelData, playlistData] = await Promise.all([
-    channelRes.json(),
-    playlistRes.json(),
-  ]);
+    const [channelData, playlistData] = await Promise.all([
+      channelRes.json(),
+      playlistRes.json(),
+    ]);
 
-  // Transform playlist items to match channel items structure
-  const playlistItems = playlistData.items.map((item) => ({
-    id: { kind: 'youtube#video', videoId: item.snippet.resourceId.videoId },
-    snippet: item.snippet,
-  }));
+    // Transform playlist items to match channel items structure
+    const playlistItems = (playlistData.items ?? []).map((item) => ({
+      id: { kind: 'youtube#video', videoId: item.snippet.resourceId.videoId },
+      snippet: item.snippet,
+    }));
 
-  // Combine both sets of videos
-  const combinedData = {
-    items: [...channelData.items, ...playlistItems],
-  };
+    // Combine both sets of videos
+    const combinedData = {
+      items: [...(channelData.items ?? []), ...playlistItems],
+    };
 
-  return {
-    props: {
-      data: combinedData,
-    },
-  };
+    return {
+      props: {
+        data: combinedData,
+      },
+      revalidate: 3600,
+    };
+  } catch (error) {
+    console.error('Failed to fetch learn-to-play data:', error);
+    return {
+      props: {
+        data: { items: [] },
+      },
+      revalidate: 300,
+    };
+  }
 }
 
 export default LearnToPlay;

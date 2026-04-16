@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Cookies from 'universal-cookie';
 
 const PatreonLogo = () => (
