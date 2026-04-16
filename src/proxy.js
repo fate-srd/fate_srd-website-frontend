@@ -22,14 +22,14 @@ export async function resolveNodeAlias(nodeId) {
     const data = await nodeData.json();
     return data?.data?.[0]?.attributes?.path?.alias ?? DEFAULT_REDIRECT_PATH;
   } catch (error) {
-    console.error('Middleware redirect fallback triggered:', error);
+    console.error('Proxy redirect fallback triggered:', error);
     return DEFAULT_REDIRECT_PATH;
   } finally {
     clearTimeout(timeoutId);
   }
 }
 
-export async function middleware(request) {
+export async function proxy(request) {
   let destinationURL = DEFAULT_REDIRECT_PATH;
   const splitPath = request.nextUrl.pathname.split('/');
 

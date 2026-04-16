@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { resolveNodeAlias } from '../src/middleware';
+import { resolveNodeAlias } from '../src/proxy';
 
 describe('resolveNodeAlias', () => {
   afterEach(() => {

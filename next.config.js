@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
 const nextConfig = {
+  turbopack: {
+    // Prevent Turbopack from guessing the workspace root via lockfiles.
+    // This repo lives under `Sites/fate_srd-website-frontend` while there's also
+    // another `package-lock.json` elsewhere under `Sites/`.
+    root: path.resolve(__dirname),
+  },
   images: {
     remotePatterns: [
       {
