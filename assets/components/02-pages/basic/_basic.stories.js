@@ -12,7 +12,8 @@ import buyItch from '../../../images/buy--itch.png';
 /**
  * Storybook Definition.
  */
-export default { title: 'Page/Basic' };
+const meta = { title: 'Page/Basic' };
+export default meta;
 
 export const BasicPage = () => (
   <div

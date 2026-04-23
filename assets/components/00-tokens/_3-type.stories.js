@@ -5,6 +5,7 @@ import data from './_3-type';
 /**
  * Storybook Definition.
  */
-export default { title: 'Tokens/Type' };
+const meta = { title: 'Tokens/Type' };
+export default meta;
 
 export const Type = () => <div dangerouslySetInnerHTML={{ __html: data }} />;

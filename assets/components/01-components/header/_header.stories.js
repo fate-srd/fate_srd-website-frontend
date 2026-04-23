@@ -10,7 +10,8 @@ import '../patreon-bar/patreon-bar';
 /**
  * Storybook Definition.
  */
-export default { title: 'Regions/Site Header' };
+const meta = { title: 'Regions/Site Header' };
+export default meta;
 
 export const SiteHeader = () => (
   <div dangerouslySetInnerHTML={{ __html: template({ logo, patreonLogo }) }} />

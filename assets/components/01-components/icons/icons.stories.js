@@ -7,7 +7,8 @@ import iconData from './icons.yml';
 /**
  * Storybook Definition.
  */
-export default { title: 'Tokens/Icons' };
+const meta = { title: 'Tokens/Icons' };
+export default meta;
 
 export const icons = () => (
   <div dangerouslySetInnerHTML={{ __html: iconTwig(iconData) }} />

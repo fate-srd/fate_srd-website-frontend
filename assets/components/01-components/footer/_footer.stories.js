@@ -7,7 +7,8 @@ import patreon from '../../../images/become_a_patron_button@2x.png';
 /**
  * Storybook Definition.
  */
-export default { title: 'Regions/Site Footer' };
+const meta = { title: 'Regions/Site Footer' };
+export default meta;
 
 export const SiteFooter = () => (
   <div dangerouslySetInnerHTML={{ __html: template({ logo, patreon }) }} />

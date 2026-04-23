@@ -13,7 +13,8 @@ import './nav-in-page';
 /**
  * Storybook Definition.
  */
-export default { title: 'Regions/Nav In Page' };
+const meta = { title: 'Regions/Nav In Page' };
+export default meta;
 
 export const NavInPage = () => (
   <div
