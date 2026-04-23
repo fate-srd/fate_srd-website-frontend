@@ -35,7 +35,7 @@
     "breakpoint-sass": "^3.0.0",
     "dotenv": "^17.2.3",
     "eslint-config-wesbos": "^4.3.2",
-    "fate-product-list": "github:fate-srd/fate-product-list#8.0.0",
+    "fate-product-list": "github:fate-srd/fate-product-list#main",
     "fathom-client": "^3.7.2",
     "html-react-parser": "^5.2.11",
     "next": "^16.1.6",
