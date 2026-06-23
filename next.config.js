@@ -7,6 +7,12 @@ const nextConfig = {
     // another `package-lock.json` elsewhere under `Sites/`.
     root: path.resolve(__dirname),
   },
+  sassOptions: {
+    // Quiet deprecation noise from third-party Sass (e.g. breakpoint-sass) and
+    // our remaining legacy @import usage in assets/components/style.scss.
+    quietDeps: true,
+    silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin'],
+  },
   images: {
     remotePatterns: [
       {

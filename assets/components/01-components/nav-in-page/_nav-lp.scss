@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .nav-lp__ul {
   margin: var(--s) 0 var(--s2);
   padding: 0;
@@ -10,7 +12,7 @@
   font: inherit;
   background-color: transparent;
   cursor: pointer;
-  color: darken(#e5e5e5, 45%);
+  color: color.adjust(#e5e5e5, $lightness: -45%);
 
   &[aria-expanded='false'] {
     .open {
@@ -34,7 +36,7 @@
   padding: 0;
   list-style: none;
   line-height: 1.2;
-  border-top: 1px solid darken(#e5e5e5, 10%);
+  border-top: 1px solid color.adjust(#e5e5e5, $lightness: -10%);
 
   a {
     display: inline-block;
