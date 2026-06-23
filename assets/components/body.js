@@ -11,9 +11,14 @@ const options = {
       const imageWidth = width ? parseInt(width, 10) : 800;
       const imageHeight = height ? parseInt(height, 10) : 600;
 
+      // Drupal can return either a relative path or an already-absolute URL.
+      const imageSrc = /^https?:\/\//i.test(src)
+        ? src
+        : `${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/${src}`;
+
       return (
         <Image
-          src={`${process.env.NEXT_PUBLIC_DRUPAL_BASE_URL}/${src}`}
+          src={imageSrc}
           width={imageWidth}
           height={imageHeight}
           alt={alt || ''}

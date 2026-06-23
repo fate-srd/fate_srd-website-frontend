@@ -18,7 +18,7 @@ const Aside = ({ ruleBook }) => {
         mobileNavOpen ? 'nav-in-page nav-in-page--open' : 'nav-in-page'
       }
     >
-      <h1 className="nav-in-page__title nav-in-page__mobile-toggle">
+      <p className="nav-in-page__title nav-in-page__mobile-toggle">
         <button onClick={toggleMobileNav} type="button">
           <span>
             <FontAwesomeIcon icon={faBars} className="bars" />
@@ -26,7 +26,7 @@ const Aside = ({ ruleBook }) => {
           </span>
           {ruleBook}
         </button>
-      </h1>
+      </p>
       <div className="nav-in-page__content">
         <Menu value={ruleBook} />
         <div className="nav-in-page__about">

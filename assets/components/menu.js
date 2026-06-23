@@ -52,12 +52,12 @@ const LinkWithChildren = ({
 
 const Menu = ({ value }) => {
   const [menuTree, setMenuTree] = useState({});
-  const [currentPathname, setcurrentPathname] = useState('');
+  const [currentPathname, setCurrentPathname] = useState('');
   const router = useRouter();
   const { query } = router;
 
   useEffect(() => {
-    setcurrentPathname(window.location.pathname);
+    setCurrentPathname(window.location.pathname);
   }, [currentPathname, query]);
 
   useEffect(() => {

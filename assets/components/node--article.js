@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { DrupalNode } from 'next-drupal';
 
 import { absoluteUrl, formatDate } from '../../lib/utils';
 

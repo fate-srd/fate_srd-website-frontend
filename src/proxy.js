@@ -2,8 +2,12 @@ import { NextResponse } from 'next/server';
 
 const DEFAULT_REDIRECT_PATH = '/';
 const REDIRECT_FETCH_TIMEOUT_MS = 3500;
-const NODE_API_URL =
-  'https://fatesrd.amazingrando.dev/jsonapi/node/article?filter%5Bdrupal_internal__nid%5D=';
+const DRUPAL_BASE_URL =
+  process.env.NEXT_PUBLIC_DRUPAL_BASE_URL ?? 'https://fatesrd.amazingrando.dev';
+const NODE_API_URL = `${DRUPAL_BASE_URL.replace(
+  /\/$/,
+  '',
+)}/jsonapi/node/article?filter%5Bdrupal_internal__nid%5D=`;
 
 function createAbortSignal(timeoutMs) {
   const controller = new AbortController();

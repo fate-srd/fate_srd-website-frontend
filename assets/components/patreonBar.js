@@ -18,7 +18,7 @@ const PatreonLogo = () => (
 );
 
 const PatreonBar = () => {
-  const [showBar, setshowBar] = useState(false);
+  const [showBar, setShowBar] = useState(false);
 
   const patreonBarCookieName = 'Patreon Bar';
 
@@ -36,14 +36,14 @@ const PatreonBar = () => {
   };
 
   const hideBar = () => {
-    setshowBar(false);
+    setShowBar(false);
     setCookieHandler();
   };
 
   useEffect(() => {
     const cookieContent = cookies.get(patreonBarCookieName);
     if (!cookieContent) {
-      setshowBar(true);
+      setShowBar(true);
     }
   }, [cookies]);
 

@@ -85,7 +85,7 @@ export default function IndexPage() {
   const woa = [
     {
       title: 'Frontier Spirit',
-      desc: 'Natural disasters, storms, subsistence, and even basic survival</strong> on an alien spirit world unused to coexisting with sentient creatures',
+      desc: '<strong>Natural disasters, storms, subsistence, and even basic survival</strong> on an alien spirit world unused to coexisting with sentient creatures',
       url: '/frontier-spirit',
       image: heroFrontierSpirit,
     },

@@ -1,8 +1,4 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { DrupalNode } from 'next-drupal';
-
-import { absoluteUrl, formatDate } from '../../lib/utils';
 
 export function NodeArticleTeaser({ node, ...props }) {
   return (
@@ -13,7 +9,7 @@ export function NodeArticleTeaser({ node, ...props }) {
       <div className="mb-4 text-gray-600">
         {node.uid?.display_name ? (
           <span>
-            <span className="font-semibold">{node.path.alias}</span>
+            <span className="font-semibold">{node.uid.display_name}</span>
           </span>
         ) : null}
       </div>

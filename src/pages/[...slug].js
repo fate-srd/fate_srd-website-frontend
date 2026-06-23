@@ -67,7 +67,10 @@ export default function NodePage({ resource, ruleBook }) {
     pageTitle = `${resource.title} • ${book}`;
   }
 
-  pageContent = pageContent.replace(/<h(\d+)>([^<>]*)<\/h(\d+)>/gi, replacer);
+  pageContent = (pageContent || '').replace(
+    /<h(\d+)>([^<>]*)<\/h(\d+)>/gi,
+    replacer,
+  );
 
   return (
     <Layout aside={resource.type !== 'pages'}>
