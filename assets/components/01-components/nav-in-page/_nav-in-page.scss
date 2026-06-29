@@ -88,6 +88,24 @@
     padding: 0;
   }
 
+  &__expand-all {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s025);
+    margin: 0;
+    padding: var(--s025) 0;
+    border: none;
+    font: inherit;
+    font-size: 0.833333333rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--color-yellow-dark);
+
+    svg.svg-inline--fa {
+      width: 0.675em;
+    }
+  }
+
   &__show-menu {
     margin-left: var(--s025);
     padding: 0;
