@@ -12,10 +12,9 @@ const LinkWithChildren = ({
   hasChildren,
   item,
   currentPathname,
-  inActivePath,
+  isOpen,
+  onToggle,
 }) => {
-  const [isOpen, setIsOpen] = useState(!!inActivePath);
-
   function buildLink(link) {
     const activeClass = link.url === currentPathname ? 'active' : '';
     return (
@@ -23,10 +22,6 @@ const LinkWithChildren = ({
         {link.title}
       </Link>
     );
-  }
-
-  function toggleMenu() {
-    setIsOpen(!isOpen);
   }
 
   return (
@@ -38,7 +33,7 @@ const LinkWithChildren = ({
           aria-expanded={isOpen}
           aria-label="Menu Toggle"
           type="button"
-          onClick={toggleMenu}
+          onClick={() => onToggle(item.id)}
         >
           <span className={isOpen ? 'open' : 'closed'}>
             <FontAwesomeIcon icon={isOpen ? faMinus : faPlus} />
@@ -50,9 +45,43 @@ const LinkWithChildren = ({
   );
 };
 
+function collectCollapsibleIds(menuArray, acc = new Set()) {
+  if (!menuArray) {
+    return acc;
+  }
+  Object.values(menuArray).forEach((item) => {
+    if (item?.items !== undefined) {
+      acc.add(item.id);
+      collectCollapsibleIds(item.items, acc);
+    }
+  });
+  return acc;
+}
+
+function collectActivePathIds(menuArray, pathname, acc = new Set()) {
+  let found = false;
+  if (!menuArray || !pathname) {
+    return found;
+  }
+  Object.values(menuArray).forEach((item) => {
+    let childFound = false;
+    if (item?.items !== undefined) {
+      childFound = collectActivePathIds(item.items, pathname, acc);
+      if (childFound) {
+        acc.add(item.id);
+      }
+    }
+    if (item?.url === pathname || childFound) {
+      found = true;
+    }
+  });
+  return found;
+}
+
 const Menu = ({ value }) => {
   const [menuTree, setMenuTree] = useState({});
   const [currentPathname, setCurrentPathname] = useState('');
+  const [openIds, setOpenIds] = useState(new Set());
   const router = useRouter();
   const { query } = router;
 
@@ -65,6 +94,39 @@ const Menu = ({ value }) => {
     setMenuTree(tree);
   }, [value]);
 
+  useEffect(() => {
+    const activeIds = new Set();
+    collectActivePathIds(menuTree, currentPathname, activeIds);
+    if (activeIds.size > 0) {
+      setOpenIds((prev) => new Set([...prev, ...activeIds]));
+    }
+  }, [menuTree, currentPathname]);
+
+  function toggleSection(id) {
+    setOpenIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  }
+
+  const collapsibleIds = collectCollapsibleIds(menuTree);
+  const allOpen =
+    collapsibleIds.size > 0 &&
+    [...collapsibleIds].every((id) => openIds.has(id));
+
+  function expandAll() {
+    setOpenIds(new Set(collapsibleIds));
+  }
+
+  function collapseAll() {
+    setOpenIds(new Set());
+  }
+
   function buildMenu(menuArray) {
     if (!menuArray) {
       return;
@@ -73,15 +135,6 @@ const Menu = ({ value }) => {
     if (Object.keys(menuArray).length > 0) {
       return Object.values(menuArray).map((item) => {
         const hasChildren = item?.items !== undefined;
-        const inActivePath = () => {
-          if (typeof item?.items !== 'undefined') {
-            return Object.values(item?.items).some(
-              (v) => v?.url === currentPathname,
-            );
-          }
-          return false;
-        };
-        const inActivePathBool = inActivePath();
         const children = hasChildren && (
           <ul
             className={`${classBase}__ul ${classBase}__ul--child`}
@@ -96,7 +149,8 @@ const Menu = ({ value }) => {
             hasChildren={hasChildren}
             item={item}
             currentPathname={currentPathname}
-            inActivePath={inActivePathBool}
+            isOpen={openIds.has(item.id)}
+            onToggle={toggleSection}
           >
             {children}
           </LinkWithChildren>
@@ -112,6 +166,17 @@ const Menu = ({ value }) => {
 
   return (
     <nav className={`${classBase}__nav`} aria-label="Menu" role="navigation">
+      {collapsibleIds.size > 0 && (
+        <button
+          className={`${classBase}__expand-all`}
+          type="button"
+          aria-expanded={allOpen}
+          onClick={allOpen ? collapseAll : expandAll}
+        >
+          <FontAwesomeIcon icon={allOpen ? faMinus : faPlus} />
+          {allOpen ? 'Collapse all' : 'Expand all'}
+        </button>
+      )}
       <ul className={`${classBase}__ul`}>{buildMenu(menuTree)}</ul>
     </nav>
   );
