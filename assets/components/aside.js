@@ -13,13 +13,18 @@ const Aside = ({ ruleBook }) => {
   };
 
   return (
-    <nav
+    <div
       className={
         mobileNavOpen ? 'nav-in-page nav-in-page--open' : 'nav-in-page'
       }
     >
       <p className="nav-in-page__title nav-in-page__mobile-toggle">
-        <button onClick={toggleMobileNav} type="button">
+        <button
+          onClick={toggleMobileNav}
+          type="button"
+          aria-expanded={mobileNavOpen}
+          aria-controls="publication-menu"
+        >
           <span>
             <FontAwesomeIcon icon={faBars} className="bars" />
             <FontAwesomeIcon icon={faTimes} className="times" />
@@ -28,7 +33,7 @@ const Aside = ({ ruleBook }) => {
         </button>
       </p>
       <div className="nav-in-page__content">
-        <Menu value={ruleBook} />
+        <Menu value={ruleBook} id="publication-menu" />
         <div className="nav-in-page__about">
           {ruleBook !== 'Odds and Ends' && ruleBook !== 'Fate Codex' && (
             <Image
@@ -38,19 +43,15 @@ const Aside = ({ ruleBook }) => {
                 .split(' ')
                 .join('-')}.jpg`}
               alt={`${ruleBook} Cover`}
-              width="200"
-              height="400"
+              width={200}
+              height={400}
             />
           )}
 
           <WhereToBuy value={ruleBook} />
-          {/* 
-          TKTK TOdo: Add author list to aside.
-          <AuthorList publicationTagID={publicationTagID} /> 
-        */}
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

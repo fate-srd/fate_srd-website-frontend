@@ -9,6 +9,7 @@
 - `npm run format:check` verifies formatting.
 - `npm test` runs unit/integration tests (Vitest).
 - `npm run test:smoke` runs Playwright smoke tests.
+- `npm run generate:menus` regenerates sidebar menus from Drupal.
 
 ## Environment Variables
 
@@ -19,14 +20,35 @@ These variables are required for app startup:
 Optional variables used by features:
 
 - `DRUPAL_PREVIEW_SECRET`
+- `DRUPAL_REVALIDATE_SECRET` — required for on-demand revalidation (`/api/revalidate`)
 - `NEXT_PUBLIC_FATHOM_ID`
+- `NEXT_PUBLIC_SITE_URL` — canonical/OG base URL (defaults to `https://fate-srd.com`)
 - `YOUTUBE_API_KEY`
 
-## Styling Notes
+## On-demand revalidation
 
-Sass files now use the module system (`@use`) rather than deprecated `@import`.
+Drupal (or a webhook) can refresh a statically generated page without a full rebuild:
 
-## Generated Artifacts
+```bash
+curl -X POST "https://fate-srd.com/api/revalidate?secret=YOUR_SECRET&path=/fate-core/outcomes"
+```
 
-- `lib/static-menus.js` and `public/sitemap-0.xml` are generated files.
-- Regenerate menus with `npm run generate:menus`.
+`path` must be the site alias (leading slash). Articles also use ISR (`revalidate: 3600`).
+
+## Static menus
+
+[`lib/static-menus.js`](lib/static-menus.js) is a generated artifact (~12k lines) used by publication sidebars.
+
+1. Ensure `NEXT_PUBLIC_DRUPAL_BASE_URL` points at a Drupal instance with menus available.
+2. Run `npm run generate:menus`.
+3. Commit the updated `lib/static-menus.js` whenever Drupal menu structure changes.
+
+CI does not regenerate menus (no Drupal credentials in the default workflow). After menu edits in Drupal, regenerate and commit before deploy so Netlify builds ship fresh nav.
+
+## Publication landings
+
+Shared copy and heroes live in [`assets/data/publications.js`](assets/data/publications.js). Route files under `src/pages/<slug>/` are thin wrappers around `PublicationLanding`.
+
+## Styling
+
+Primary styles are Sass/BEM under `assets/components/` (imported from `_app.js`). Tailwind is not used.

@@ -1,26 +1,16 @@
-import Head from 'next/head';
-import { Layout } from '../../../assets/components/layout';
-import heroImage from '../../../assets/images/landing-page-heroes/hero--odds-ends.jpg';
-import PublicationPage from '../../../assets/components/publicationPage';
+import PublicationLanding from '../../../assets/components/publicationLanding';
+import { getPublication } from '../../../assets/data/publications';
 
-const Page = () => {
-  const title = 'Odds and Ends';
-  const description =
-    '<p>A collection of small SRD content for use in your games.</p>';
+const publication = getPublication('odds-and-ends');
 
-  return (
-    <Layout aside>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <PublicationPage
-        title={title}
-        description={description}
-        ruleBook={title}
-        imageSrc={heroImage}
-      />
-    </Layout>
-  );
-};
+const Page = () => (
+  <PublicationLanding
+    title={publication.title}
+    description={publication.description}
+    ruleBook={publication.ruleBook}
+    imageSrc={publication.imageSrc}
+    path="/odds-and-ends"
+  />
+);
 
 export default Page;

@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Head from 'next/head';
 import Header from './header';
 import Footer from './footer';
@@ -18,6 +17,9 @@ export function Layout({ children, aside }) {
           content="https://fate-srd.com/images/sharing.png"
         />
       </Head>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <Header />
       <div className="site-main">
         <div

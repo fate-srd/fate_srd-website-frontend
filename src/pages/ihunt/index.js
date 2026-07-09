@@ -1,26 +1,16 @@
-import Head from 'next/head';
-import { Layout } from '../../../assets/components/layout';
-import heroImage from '../../../assets/images/landing-page-heroes/hero--ihunt.jpg';
-import PublicationPage from '../../../assets/components/publicationPage';
+import PublicationLanding from '../../../assets/components/publicationLanding';
+import { getPublication } from '../../../assets/data/publications';
 
-const Page = () => {
-  const title = '#iHunt';
-  const description =
-    "<p>#iHunt is a story telling game about killing monsters in the gig economy. In it, you play millennials scraping by paycheck to paycheck to make ends meet. A gig app called #iHunt offers them more money than they've ever made to hit the streets and kill vampires, werewolves, demons, and anything else that goes bump in the night. </p>";
+const publication = getPublication('ihunt');
 
-  return (
-    <Layout aside>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <PublicationPage
-        title={title}
-        description={description}
-        ruleBook="iHunt"
-        imageSrc={heroImage}
-      />
-    </Layout>
-  );
-};
+const Page = () => (
+  <PublicationLanding
+    title={publication.title}
+    description={publication.description}
+    ruleBook={publication.ruleBook}
+    imageSrc={publication.imageSrc}
+    path="/ihunt"
+  />
+);
 
 export default Page;

@@ -20,11 +20,39 @@ body {
   /* Fix for IE weirdness */
 }
 
-.visually-hidden {
+.visually-hidden:where(:not(:focus-within, :active)) {
   position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  height: 1px !important;
+  width: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 1000;
+  top: var(--s05);
+  left: var(--s05);
+  padding: var(--s05) var(--s);
+  background: var(--color-blue-dark);
+  color: var(--color-white);
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+
+  &:not(:focus):not(:active) {
+    position: absolute !important;
+    clip-path: inset(50%) !important;
+    overflow: hidden !important;
+    height: 1px !important;
+    width: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
 }

@@ -78,7 +78,7 @@ function collectActivePathIds(menuArray, pathname, acc = new Set()) {
   return found;
 }
 
-const Menu = ({ value }) => {
+const Menu = ({ value, id }) => {
   const [menuTree, setMenuTree] = useState({});
   const [currentPathname, setCurrentPathname] = useState('');
   const [openIds, setOpenIds] = useState(new Set());
@@ -165,7 +165,11 @@ const Menu = ({ value }) => {
   }
 
   return (
-    <nav className={`${classBase}__nav`} aria-label="Menu" role="navigation">
+    <nav
+      id={id}
+      className={`${classBase}__nav`}
+      aria-label={`${value || 'Publication'} contents`}
+    >
       {collapsibleIds.size > 0 && (
         <button
           className={`${classBase}__expand-all`}
