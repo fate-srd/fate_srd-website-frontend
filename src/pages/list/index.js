@@ -1,26 +1,26 @@
-import Head from 'next/head';
-
 import { drupal } from '../../../lib/drupal';
 import { Layout } from '../../../assets/components/layout';
 import { NodeArticleTeaser } from '../../../assets/components/node--article--teaser';
+import { PageMeta } from '../../../assets/components/pageMeta';
 
 export default function IndexPage({ nodes }) {
   return (
     <Layout>
-      <Head>
-        <title>Latest Articles • Fate SRD</title>
-      </Head>
-      <main className="main-content-wrapper" role="main">
-        <h1 className="mb-10 text-6xl font-black">Latest Articles.</h1>
+      <PageMeta
+        title="Latest Articles • Fate SRD"
+        description="Browse the latest Fate SRD articles and rules content."
+        path="/list"
+      />
+      <main id="main-content" className="main-content-wrapper" tabIndex={-1}>
+        <h1 className="article-list__title">Latest Articles.</h1>
         {nodes?.length ? (
           nodes.map((node) => (
-            <div key={node.id}>
+            <div key={node.id} className="article-list__item">
               <NodeArticleTeaser node={node} />
-              <hr className="my-20" />
             </div>
           ))
         ) : (
-          <p className="py-4">No nodes found</p>
+          <p className="article-list__empty">No nodes found</p>
         )}
       </main>
     </Layout>
@@ -44,5 +44,6 @@ export async function getStaticProps(context) {
     props: {
       nodes,
     },
+    revalidate: 3600,
   };
 }

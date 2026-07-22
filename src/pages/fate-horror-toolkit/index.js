@@ -1,26 +1,16 @@
-import Head from 'next/head';
-import { Layout } from '../../../assets/components/layout';
-import heroImage from '../../../assets/images/landing-page-heroes/hero--fate-horror-toolkit.jpg';
-import PublicationPage from '../../../assets/components/publicationPage';
+import PublicationLanding from '../../../assets/components/publicationLanding';
+import { getPublication } from '../../../assets/data/publications';
 
-const Page = () => {
-  const title = 'Fate Horror Toolkit';
-  const description =
-    '<p>Something lurks in the shadows… Maybe it’s a masked killer, or a creature from the unknown depths, or a psychotic porcelain doll. Or maybe it’s just a cat, and the threat stands right behind you! The Fate Horror Toolkit offers a variety of tools, mechanics, and hacks to help you develop thematic horror in your game. Explore what horror is and how to employ it effectively at your table. Learn how to develop horrific elements in Fate—a game system designed around competent, proactive characters not usually seen in horror. Pick from a variety of mechanics to easily design your own game about the things that go bump in the night.</p>';
+const publication = getPublication('fate-horror-toolkit');
 
-  return (
-    <Layout aside>
-      <Head>
-        <title>{title}</title>
-      </Head>
-      <PublicationPage
-        title={title}
-        description={description}
-        ruleBook={title}
-        imageSrc={heroImage}
-      />
-    </Layout>
-  );
-};
+const Page = () => (
+  <PublicationLanding
+    title={publication.title}
+    description={publication.description}
+    ruleBook={publication.ruleBook}
+    imageSrc={publication.imageSrc}
+    path="/fate-horror-toolkit"
+  />
+);
 
 export default Page;

@@ -20,7 +20,7 @@ const PatreonLogo = () => (
 const PatreonBar = () => {
   const [showBar, setShowBar] = useState(false);
 
-  const patreonBarCookieName = 'Patreon Bar';
+  const patreonBarCookieName = 'patreon_bar';
 
   const cookies = useMemo(
     () =>

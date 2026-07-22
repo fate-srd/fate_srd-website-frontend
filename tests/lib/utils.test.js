@@ -1,5 +1,10 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { absoluteUrl, formatDate } from '../../lib/utils';
+import {
+  absoluteUrl,
+  absoluteSiteUrl,
+  formatDate,
+  stripHtml,
+} from '../../lib/utils';
 
 describe('formatDate', () => {
   it('formats an ISO date for US locale', () => {
@@ -14,5 +19,17 @@ describe('absoluteUrl', () => {
 
   it('builds a URL from the configured base URL', () => {
     expect(absoluteUrl('/fate-core')).toBe('https://fate-srd.com/fate-core');
+  });
+});
+
+describe('stripHtml', () => {
+  it('removes tags and collapses whitespace', () => {
+    expect(stripHtml('<p>Hello <em>there</em></p>')).toBe('Hello there');
+  });
+});
+
+describe('absoluteSiteUrl', () => {
+  it('joins the public site URL with a path', () => {
+    expect(absoluteSiteUrl('fate-core')).toBe('https://fate-srd.com/fate-core');
   });
 });

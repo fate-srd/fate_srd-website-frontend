@@ -1,10 +1,13 @@
-import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { drupal } from '../../lib/drupal';
 import { Layout } from '../../assets/components/layout';
 import linkIcon from '../../assets/images/icons/link-solid.svg';
 import Aside from '../../assets/components/aside';
 import { Body } from '../../assets/components/body';
+import { PageMeta } from '../../assets/components/pageMeta';
+import { stripHtml } from '../../lib/utils';
+
+const ARTICLE_REVALIDATE_SECONDS = 3600;
 
 export default function NodePage({ resource, ruleBook }) {
   const [toc, setToc] = useState([{}]);
@@ -43,7 +46,7 @@ export default function NodePage({ resource, ruleBook }) {
   if (!resource) return null;
   const book = ruleBook ? ruleBook[0]?.name : '';
 
-  function replacer(match, p1, p2, p3, offset, string) {
+  function replacer(match, p1, p2) {
     const hash = p2
       .replace(/ /g, '-')
       .replace(/[?,:()“”"'’+.*]/g, '')
@@ -55,6 +58,7 @@ export default function NodePage({ resource, ruleBook }) {
 
   let pageContent = '';
   let pageTitle = '';
+  let pathAlias = '/';
 
   if (resource.type === 'pages') {
     pageContent = resource.body;
@@ -63,8 +67,9 @@ export default function NodePage({ resource, ruleBook }) {
     pageContent =
       resource.body?.processed !== ''
         ? resource.body?.processed
-        : resource.body.value;
+        : resource.body?.value;
     pageTitle = `${resource.title} • ${book}`;
+    pathAlias = resource.path?.alias || '/';
   }
 
   pageContent = (pageContent || '').replace(
@@ -72,14 +77,25 @@ export default function NodePage({ resource, ruleBook }) {
     replacer,
   );
 
+  const description = stripHtml(pageContent).slice(0, 300);
+
   return (
     <Layout aside={resource.type !== 'pages'}>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta property="og:title" content={pageTitle} key="title" />
-        <meta property="og:type" content="website" />
-      </Head>
-      <main className="main-content-wrapper" role="main">
+      <PageMeta
+        title={pageTitle}
+        description={
+          description ||
+          `${resource.title} from the Fate SRD${book ? ` (${book})` : ''}.`
+        }
+        path={pathAlias}
+        type="article"
+      />
+      <main
+        id="main-content"
+        className="main-content-wrapper"
+        role="main"
+        tabIndex={-1}
+      >
         <p className="rules-section">{book}</p>
         <h1 className="page-title">{resource.title}</h1>
         {toc.length > 1 && (
@@ -99,10 +115,7 @@ export default function NodePage({ resource, ruleBook }) {
       </main>
       {resource.type !== 'pages' && (
         <aside className="aside-wrapper">
-          <Aside
-            ruleBook={book}
-            publicationTagID={resource?.field_tags[0]?.id}
-          />
+          <Aside ruleBook={book} />
         </aside>
       )}
     </Layout>
@@ -168,5 +181,6 @@ export async function getStaticProps(context) {
       resource,
       ruleBook,
     },
+    revalidate: ARTICLE_REVALIDATE_SECONDS,
   };
 }

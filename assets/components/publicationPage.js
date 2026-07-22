@@ -3,7 +3,11 @@ import Aside from './aside';
 
 const PublicationPage = ({ title, description, imageSrc, ruleBook }) => (
   <>
-    <main className="main-content-wrapper main-content-wrapper--with-hero">
+    <main
+      id="main-content"
+      className="main-content-wrapper main-content-wrapper--with-hero"
+      tabIndex={-1}
+    >
       <Image src={imageSrc} alt="" className="main-content__hero" />
       <div className="main-content--with-hero__content">
         <h1 className="page-title">{title}</h1>
