@@ -2,6 +2,9 @@ import '../../assets/components/style.scss';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as Fathom from 'fathom-client';
+import PlausibleProvider from 'next-plausible';
+
+const plausibleSrc = process.env.NEXT_PUBLIC_PLAUSIBLE_SRC;
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -28,5 +31,19 @@ export default function App({ Component, pageProps }) {
     };
   }, [router.events]);
 
-  return <Component {...pageProps} />;
+  const page = <Component {...pageProps} />;
+
+  if (!plausibleSrc) {
+    return page;
+  }
+
+  return (
+    <PlausibleProvider
+      src={plausibleSrc}
+      enabled
+      scriptProps={{ fetchPriority: 'low' }}
+    >
+      {page}
+    </PlausibleProvider>
+  );
 }
