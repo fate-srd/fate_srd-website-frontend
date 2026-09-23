@@ -22,6 +22,7 @@ Optional variables used by features:
 - `DRUPAL_PREVIEW_SECRET`
 - `DRUPAL_REVALIDATE_SECRET` — required for on-demand revalidation (`/api/revalidate`)
 - `NEXT_PUBLIC_FATHOM_ID`
+- `NEXT_PUBLIC_PLAUSIBLE_SRC` — site-specific script URL from the Plausible dashboard (e.g. `https://plausible.io/js/pa-XXXXX.js`)
 - `NEXT_PUBLIC_SITE_URL` — canonical/OG base URL (defaults to `https://fate-srd.com`)
 - `YOUTUBE_API_KEY`
 
