@@ -12,12 +12,13 @@ const fateTranslations = {
   'Fate SRD in Italian': 'https://www.fateitalia.it/',
   'Fate SRD in French': 'https://fate-srd.fr/',
   'Fate SRD in Brazilian Portuguese':
-    'https://fatesrdbrasil.gitlab.io/fate-srd-brasil/',
+  'https://fatesrdbrasil.gitlab.io/fate-srd-brasil/',
   'Fate SRD in Korean':
-    'https://ko.trpgkr.wikidok.net/wp-d/5d1db45ca4a7f1be66b95a44/View',
+  'https://ko.trpgkr.wikidok.net/wp-d/5d1db45ca4a7f1be66b95a44/View',
   'Fate SRD in Japanese': 'https://w.atwiki.jp/fatesrdj/',
   'Fate SRD in Chinese': 'https://www.sites.google.com/site/faterpg/fate',
   'Fate SRD in Czech (+Slovak)': 'https://fatesrd.d20.cz',
+  'Fate Condensed in Turkish': 'https://yazgisrd.com/',
 };
 
 const Footer = () => (
